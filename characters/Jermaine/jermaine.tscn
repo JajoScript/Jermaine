@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceus4wur8gh3t"]
+
+[ext_resource type="Texture2D" uid="uid://cyjtue2a0bjbj" path="res://characters/Jermaine/assets/Biker_idle.png" id="1_me3bp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_am1gi"]
+size = Vector2(20, 35)
+
+[sub_resource type="Animation" id="Animation_0fx2w"]
+resource_name = "Idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1vmuh"]
+_data = {
+"Idle": SubResource("Animation_0fx2w")
+}
+
+[node name="Jermaine" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 3)
+texture = ExtResource("1_me3bp")
+centered = false
+hframes = 6
+region_rect = Rect2(147.149, 13.737, 19.9181, 34.5146)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14, 34)
+shape = SubResource("RectangleShape2D_am1gi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1vmuh")
+}
