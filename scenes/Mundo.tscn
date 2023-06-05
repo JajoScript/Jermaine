@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcgamxfym05sa"]
+
+[ext_resource type="PackedScene" uid="uid://cttiyapd5hk6o" path="res://characters/Jermaine/jermaine.tscn" id="1_dcw0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gj5u"]
+size = Vector2(431, 20)
+
+[node name="Mundo" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(212, 229)
+shape = SubResource("RectangleShape2D_6gj5u")
+
+[node name="Jermaine" parent="." instance=ExtResource("1_dcw0m")]
+position = Vector2(46, 180)
