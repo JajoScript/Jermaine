@@ -1,5 +1,6 @@
 # Dependencias.
 extends Area2D
+signal hit
 
 # Variables.
 var speed : int = 400;
@@ -34,10 +35,12 @@ func _process(_delta):
 	$Sprite.play();
 	
 	if (velocity.x != 0):
-		$Sprite.animation = "walk"
+		$Sprite.animation = "Walk"
 		$Sprite.flip_v = false;
 		$Sprite.flip_h = (velocity.x < 0);
+	if (velocity.y != 0): 
+		$Sprite.animation = "Double jump"
 		
 	else:
-		$Sprite.animation = "idle"
+		$Sprite.animation = "Idle"
 	
