@@ -179,7 +179,7 @@ metadata/_edit_group_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fhbbp")
-animation = &"Idle"
+animation = &"Double jump"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(-8, 7)

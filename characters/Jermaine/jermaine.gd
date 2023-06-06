@@ -20,13 +20,20 @@ func motion_ctrl() -> void:
 
 func move_animation() -> void:
 
-	if (velocity.x != 0):
+	if (velocity.x != 0 and velocity.y == 0):
 		$Sprite.play("Walk")
+		$Sprite.flip_h = (velocity.x < 0)
+	elif (velocity.y != 0):
+		$Sprite.play("Double jump");
 		$Sprite.flip_h = (velocity.x < 0)
 	else:
 		$Sprite.play("Idle")
 
 # Procesos.
+func _physics_process(_delta):
+	velocity.y += 50
+	move_and_slide();
+	
 func _process(_delta):
 	# Animaciones
 	$Sprite.play()
@@ -34,7 +41,7 @@ func _process(_delta):
 	# Control del jugador.
 	motion_ctrl();
 	move_animation();
-	move_and_slide()
+	
 	
 	
 	
