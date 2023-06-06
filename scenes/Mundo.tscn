@@ -1,27 +1,83 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcgamxfym05sa"]
+[gd_scene load_steps=9 format=3 uid="uid://bcgamxfym05sa"]
 
-[ext_resource type="PackedScene" uid="uid://cttiyapd5hk6o" path="res://characters/Jermaine/jermaine.tscn" id="1_dcw0m"]
-[ext_resource type="Texture2D" uid="uid://b53cdpyyp1fev" path="res://backgrounds/Level01/Background.png" id="2_oidqv"]
+[ext_resource type="Texture2D" uid="uid://c2t1f87rjv4jp" path="res://src/backgrounds/level_01/Layer01.png" id="1_3crao"]
+[ext_resource type="Texture2D" uid="uid://b6uqg1g4et4ay" path="res://src/backgrounds/level_01/Layer02.png" id="2_nuk5d"]
+[ext_resource type="Texture2D" uid="uid://wh1aip55fhlx" path="res://src/backgrounds/level_01/Layer03.png" id="3_0w6gc"]
+[ext_resource type="Texture2D" uid="uid://c3uv2ftyv65sc" path="res://src/tiles/green_zone/Tile_01.png" id="4_1ffnk"]
+[ext_resource type="PackedScene" uid="uid://dsypulsnbgbvd" path="res://src/characters/jermaine/jermaine.tscn" id="6_nnuyp"]
+[ext_resource type="Texture2D" uid="uid://b7ux5hj7she5o" path="res://src/assets/trees/Tree1.png" id="6_suygf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gj5u"]
-size = Vector2(431, 20)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7u4nu"]
+texture = ExtResource("4_1ffnk")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_nr42n"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_7u4nu")
 
 [node name="Mundo" type="Node2D"]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(212, 229)
-shape = SubResource("RectangleShape2D_6gj5u")
-
-[node name="Jermaine" parent="." instance=ExtResource("1_dcw0m")]
-position = Vector2(46, 180)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(260, 92)
-texture = ExtResource("2_oidqv")
+position = Vector2(-1, -2)
+texture = ExtResource("1_3crao")
+centered = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxBackground"]
+position = Vector2(-1, -2)
+texture = ExtResource("2_nuk5d")
+centered = false
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxBackground2"]
+position = Vector2(-1, -2)
+texture = ExtResource("3_0w6gc")
+centered = false
+
+[node name="Jermaine" parent="." instance=ExtResource("6_nnuyp")]
+z_index = 1
+position = Vector2(35, 280)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(214, 203)
 
 [node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_nr42n")
+cell_quadrant_size = 8
 format = 2
+layer_0/name = "Capa 0"
+layer_0/tile_data = PackedInt32Array(1245184, 0, 0, 1310720, 0, 1, 1245185, 65536, 0, 1310721, 65536, 1, 1245186, 65536, 0, 1310722, 65536, 1, 1245187, 65536, 0, 1310723, 65536, 1, 1245188, 65536, 0, 1310724, 65536, 1, 1245189, 65536, 0, 1310725, 65536, 1, 1245190, 65536, 0, 1310726, 65536, 1, 1245191, 65536, 0, 1310727, 65536, 1, 1245192, 65536, 0, 1310728, 65536, 1, 1245193, 65536, 0, 1310729, 65536, 1, 1245194, 65536, 0, 1310730, 65536, 1, 1245195, 65536, 0, 1310731, 65536, 1, 1245196, 65536, 0, 1310732, 65536, 1, 1245197, 65536, 0, 1310733, 65536, 1, 1245198, 65536, 0, 1310734, 65536, 1, 1245199, 65536, 0, 1310735, 65536, 1, 1245200, 65536, 0, 1310736, 65536, 1, 1245201, 65536, 0, 1310737, 65536, 1, 1245202, 65536, 0, 1310738, 65536, 1, 1245203, 65536, 0, 1310739, 65536, 1, 1245204, 65536, 0, 1310740, 65536, 1, 1245205, 65536, 0, 1310741, 65536, 1, 1245206, 65536, 0, 1310742, 65536, 1, 1245207, 65536, 0, 1310743, 65536, 1, 1245208, 65536, 0, 1310744, 65536, 1, 1245209, 65536, 0, 1310745, 65536, 1, 1245210, 65536, 0, 1310746, 65536, 1)
+layer_1/name = "Capa 1"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
+
+[node name="Arbol" type="Sprite2D" parent="."]
+position = Vector2(359, 202)
+texture = ExtResource("6_suygf")
+centered = false
+
+[node name="Arbol2" type="Sprite2D" parent="."]
+position = Vector2(15, 202)
+texture = ExtResource("6_suygf")
+centered = false

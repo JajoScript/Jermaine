@@ -1,9 +1,10 @@
 # Dependencias.
-extends CharacterBody2D
+extends Area2D
 signal hit
 
 # Variables.
 @export var speed : int = 100;
+var velocity := Vector2.ZERO;
 var axis: Vector2;
 
 # Metodos.
@@ -18,23 +19,23 @@ func motion_ctrl() -> void:
 	velocity.x = (get_axis().x * speed);
 	velocity.y = (get_axis().y * -speed);
 
-func move_animation() -> void:
+func move_and_slide(delta) -> void:
+	position = position + (velocity * delta)
 
 	if (velocity.x != 0):
 		$Sprite.play("Walk")
-		$Sprite.flip_h = (velocity.x < 0)
+		$Sprite.flip_h = (velocity.x < 0);
 	else:
 		$Sprite.play("Idle")
 
 # Procesos.
-func _process(_delta):
+func _process(delta):
 	# Animaciones
 	$Sprite.play()
 	
 	# Control del jugador.
 	motion_ctrl();
-	move_animation();
-	move_and_slide()
+	move_and_slide(delta)
 	
 	
 	
