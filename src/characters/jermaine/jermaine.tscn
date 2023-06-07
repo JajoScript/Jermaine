@@ -1,10 +1,35 @@
-[gd_scene load_steps=28 format=3 uid="uid://dsypulsnbgbvd"]
+[gd_scene load_steps=35 format=3 uid="uid://dsypulsnbgbvd"]
 
 [ext_resource type="Script" path="res://characters/Jermaine/jermaine.gd" id="1_tkq68"]
 [ext_resource type="Texture2D" uid="uid://bgyhwr82iwap5" path="res://characters/Jermaine/assets/Biker_doublejump.png" id="2_8fhmd"]
+[ext_resource type="Texture2D" uid="uid://bu2byt1vpwbq7" path="res://src/characters/jermaine/sprites/attack.png" id="2_lx5b5"]
 [ext_resource type="Texture2D" uid="uid://cyjtue2a0bjbj" path="res://characters/Jermaine/assets/Biker_idle.png" id="3_o0ytp"]
 [ext_resource type="Texture2D" uid="uid://xma6nat77ssa" path="res://characters/Jermaine/assets/Biker_jump.png" id="4_b2gie"]
 [ext_resource type="Texture2D" uid="uid://bfmh755jyurag" path="res://characters/Jermaine/assets/Biker_run.png" id="5_241oq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6hsn"]
+atlas = ExtResource("2_lx5b5")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agmev"]
+atlas = ExtResource("2_lx5b5")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ref7"]
+atlas = ExtResource("2_lx5b5")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odx0f"]
+atlas = ExtResource("2_lx5b5")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mak03"]
+atlas = ExtResource("2_lx5b5")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxtkb"]
+atlas = ExtResource("2_lx5b5")
+region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uoemr"]
 atlas = ExtResource("2_8fhmd")
@@ -88,6 +113,29 @@ region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fhbbp"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6hsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agmev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ref7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odx0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mak03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxtkb")
+}],
+"loop": true,
+"name": &"Atack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uoemr")
@@ -179,7 +227,8 @@ metadata/_edit_group_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fhbbp")
-animation = &"Double jump"
+animation = &"Atack"
+frame_progress = 0.00776922
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(-8, 7)
