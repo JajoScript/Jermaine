@@ -1,16 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bcgamxfym05sa"]
+[gd_scene load_steps=8 format=3 uid="uid://bgp21j84jt7q5"]
 
-[ext_resource type="Texture2D" uid="uid://c2t1f87rjv4jp" path="res://src/backgrounds/level_01/Layer01.png" id="1_3crao"]
-[ext_resource type="Texture2D" uid="uid://b6uqg1g4et4ay" path="res://src/backgrounds/level_01/Layer02.png" id="2_nuk5d"]
-[ext_resource type="Texture2D" uid="uid://ccrflujjdhrtl" path="res://backgrounds/Level01/Layer05.png" id="3_0kei4"]
-[ext_resource type="Texture2D" uid="uid://c3uv2ftyv65sc" path="res://src/tiles/green_zone/Tile_01.png" id="4_1ffnk"]
-[ext_resource type="PackedScene" uid="uid://dsypulsnbgbvd" path="res://src/characters/jermaine/jermaine.tscn" id="6_nnuyp"]
-[ext_resource type="Texture2D" uid="uid://b7ux5hj7she5o" path="res://src/assets/trees/Tree1.png" id="6_suygf"]
-[ext_resource type="Texture2D" uid="uid://dvj0sxjuywmae" path="res://src/assets/tocomples/tocomples.png" id="7_jpbxt"]
-[ext_resource type="PackedScene" uid="uid://bq155k30ostfx" path="res://src/cameras/camera.tscn" id="8_yvtwc"]
+[ext_resource type="Texture2D" uid="uid://c3uv2ftyv65sc" path="res://src/tiles/green_zone/Tile_01.png" id="5_ctj1n"]
+[ext_resource type="PackedScene" uid="uid://ch57627pm4leb" path="res://src/characters/jermaine/jermaine.tscn" id="5_qv1de"]
+[ext_resource type="Texture2D" uid="uid://b7ux5hj7she5o" path="res://src/assets/trees/Tree1.png" id="6_rrufk"]
+[ext_resource type="Texture2D" uid="uid://dvj0sxjuywmae" path="res://src/assets/tocomples/tocomples.png" id="7_podqi"]
+[ext_resource type="PackedScene" uid="uid://bq155k30ostfx" path="res://src/cameras/camera.tscn" id="8_wvu33"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7u4nu"]
-texture = ExtResource("4_1ffnk")
+texture = ExtResource("5_ctj1n")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -32,31 +29,6 @@ sources/0 = SubResource("TileSetAtlasSource_7u4nu")
 
 [node name="Mundo" type="Node2D"]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(-1, -2)
-texture = ExtResource("1_3crao")
-centered = false
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="ParallaxBackground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxBackground"]
-position = Vector2(-1, -2)
-texture = ExtResource("2_nuk5d")
-centered = false
-
-[node name="ParallaxBackground2" type="ParallaxBackground" parent="ParallaxBackground"]
-
-[node name="Layer05" type="Sprite2D" parent="ParallaxBackground/ParallaxBackground2"]
-position = Vector2(286, 161)
-texture = ExtResource("3_0kei4")
-
-[node name="Jermaine" parent="." instance=ExtResource("6_nnuyp")]
-unique_name_in_owner = true
-z_index = 1
-position = Vector2(35, 276)
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_nr42n")
 cell_quadrant_size = 8
@@ -73,19 +45,23 @@ layer_1/tile_data = PackedInt32Array()
 
 [node name="Arbol" type="Sprite2D" parent="."]
 position = Vector2(359, 202)
-texture = ExtResource("6_suygf")
+texture = ExtResource("6_rrufk")
 centered = false
 
 [node name="Arbol2" type="Sprite2D" parent="."]
 position = Vector2(15, 202)
-texture = ExtResource("6_suygf")
+texture = ExtResource("6_rrufk")
 centered = false
 
 [node name="Tocomples" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(69, 292)
 scale = Vector2(0.145291, 0.145291)
-texture = ExtResource("7_jpbxt")
+texture = ExtResource("7_podqi")
 
-[node name="Camera2D" parent="." instance=ExtResource("8_yvtwc")]
-position = Vector2(27, 286)
+[node name="Camera2D" parent="." instance=ExtResource("8_wvu33")]
+visible = false
+position = Vector2(215, 215)
+
+[node name="Jermaine" parent="." instance=ExtResource("5_qv1de")]
+position = Vector2(130, 275)

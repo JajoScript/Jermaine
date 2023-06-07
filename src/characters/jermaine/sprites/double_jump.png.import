@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://13us4fuugeu5"
-path="res://.godot/imported/Biker_hurt.png-d8607491f5952590b555e0788ad6566b.ctex"
+uid="uid://dqm4dj5qf3um2"
+path="res://.godot/imported/double_jump.png-4c6f8cd3484fead352a4271e2ed466d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/Jermaine/assets/Biker_hurt.png"
-dest_files=["res://.godot/imported/Biker_hurt.png-d8607491f5952590b555e0788ad6566b.ctex"]
+source_file="res://src/characters/jermaine/sprites/double_jump.png"
+dest_files=["res://.godot/imported/double_jump.png-4c6f8cd3484fead352a4271e2ed466d0.ctex"]
 
 [params]
 
