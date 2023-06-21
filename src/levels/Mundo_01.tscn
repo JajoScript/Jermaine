@@ -60,8 +60,8 @@ scale = Vector2(0.145291, 0.145291)
 texture = ExtResource("7_podqi")
 
 [node name="Camera2D" parent="." instance=ExtResource("8_wvu33")]
-visible = false
 position = Vector2(215, 215)
+zoom = Vector2(3, 3)
 
 [node name="Jermaine" parent="." instance=ExtResource("5_qv1de")]
 position = Vector2(130, 275)

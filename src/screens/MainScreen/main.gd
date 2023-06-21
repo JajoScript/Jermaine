@@ -13,6 +13,7 @@ func _process(_delta):
 
 func _on_btn_nueva_partida_button_up():
 	print("Nueva partida!")
+	get_tree().change_scene_to_file("res://src/screens/NewGameScreen/new_game_scene.tscn")
 
 
 func _on_btn_cargar_partida_button_up():

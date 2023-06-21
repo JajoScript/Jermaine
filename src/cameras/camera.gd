@@ -10,3 +10,4 @@ func _ready():
 func _process(_delta):
 	position = player.position;
 	
+	
