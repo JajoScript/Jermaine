@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bco8v1fn64f61"]
+
+[ext_resource type="Texture2D" uid="uid://d0g25s130255m" path="res://src/sprites/carrito_completos/carrito.png" id="1_dc46s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrly5"]
+size = Vector2(40.5, 39)
+
+[node name="Carrito" type="Area2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(2, 0)
+scale = Vector2(0.162325, 0.162325)
+texture = ExtResource("1_dc46s")
+centered = false
+flip_h = true
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(43.75, 35.5)
+shape = SubResource("RectangleShape2D_rrly5")

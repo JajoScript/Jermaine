@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgp21j84jt7q5"]
+[gd_scene load_steps=10 format=3 uid="uid://bxh6agepx0156"]
 
+[ext_resource type="PackedScene" uid="uid://bco8v1fn64f61" path="res://src/sprites/carrito_completos/carrito.tscn" id="5_2iys4"]
 [ext_resource type="Texture2D" uid="uid://c3uv2ftyv65sc" path="res://src/tiles/green_zone/Tile_01.png" id="5_ctj1n"]
 [ext_resource type="PackedScene" uid="uid://ch57627pm4leb" path="res://src/characters/jermaine/jermaine.tscn" id="5_qv1de"]
+[ext_resource type="PackedScene" uid="uid://ces6yobiq4vxp" path="res://src/game components/interactArea/interact_area.tscn" id="6_cclae"]
 [ext_resource type="Texture2D" uid="uid://b7ux5hj7she5o" path="res://src/assets/trees/Tree1.png" id="6_rrufk"]
-[ext_resource type="Texture2D" uid="uid://dvj0sxjuywmae" path="res://src/assets/tocomples/tocomples.png" id="7_podqi"]
-[ext_resource type="PackedScene" uid="uid://bq155k30ostfx" path="res://src/cameras/camera.tscn" id="8_wvu33"]
+[ext_resource type="PackedScene" uid="uid://b75hvqgxqktrh" path="res://src/sprites/gonzalin/gonzalin.tscn" id="7_53t5q"]
+[ext_resource type="Script" path="res://src/levels/Camera2D.gd" id="7_dy6f7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7u4nu"]
 texture = ExtResource("5_ctj1n")
@@ -27,7 +29,7 @@ texture = ExtResource("5_ctj1n")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7u4nu")
 
-[node name="Mundo" type="Node2D"]
+[node name="Mundo_01" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_nr42n")
@@ -53,15 +55,26 @@ position = Vector2(15, 202)
 texture = ExtResource("6_rrufk")
 centered = false
 
-[node name="Tocomples" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(69, 292)
-scale = Vector2(0.145291, 0.145291)
-texture = ExtResource("7_podqi")
-
-[node name="Camera2D" parent="." instance=ExtResource("8_wvu33")]
-position = Vector2(215, 215)
-zoom = Vector2(3, 3)
-
 [node name="Jermaine" parent="." instance=ExtResource("5_qv1de")]
-position = Vector2(130, 275)
+z_index = 2
+position = Vector2(240, 288)
+
+[node name="Carrito" parent="." instance=ExtResource("5_2iys4")]
+z_index = 1
+position = Vector2(75, 250)
+
+[node name="InteractArea" parent="." instance=ExtResource("6_cclae")]
+position = Vector2(110, 285)
+scale = Vector2(1.99273, 1.86179)
+interact_label = "Investigar carrito"
+interact_type = "print_text"
+interact_value = "El carrito ya no tiene chucrut"
+
+[node name="Gonzalin" parent="." instance=ExtResource("7_53t5q")]
+position = Vector2(98, 281)
+scale = Vector2(1.16, 1.16)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(214, 216)
+zoom = Vector2(3, 3)
+script = ExtResource("7_dy6f7")

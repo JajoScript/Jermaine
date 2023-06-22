@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfp6xwu4mf8jq"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="FontFile" uid="uid://dkx3hiorledy1" path="res://PressStart2P-Regular.ttf" id="1_fjawb"]
+[ext_resource type="FontFile" uid="uid://o5gd3od23k32" path="res://src/assets/fonts/PressStart2P-Regular.ttf" id="1_fjawb"]
 [ext_resource type="Script" path="res://src/screens/NewGameScreen/new_game_scene.gd" id="1_yc6vl"]
 
 [node name="NewGameScene" type="Node2D"]

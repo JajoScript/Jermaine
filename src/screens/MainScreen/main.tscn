@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://2ju0wc3wnkf5"]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Texture2D" uid="uid://dn32idlswtkbf" path="res://src/assets/splash/background.png" id="1_b8nnw"]
 [ext_resource type="Script" path="res://src/screens/MainScreen/main.gd" id="1_s5gcv"]
 [ext_resource type="FontFile" uid="uid://o5gd3od23k32" path="res://src/assets/fonts/PressStart2P-Regular.ttf" id="2_q7gc3"]
-[ext_resource type="FontFile" uid="uid://dkx3hiorledy1" path="res://PressStart2P-Regular.ttf" id="3_dgbnk"]
+[ext_resource type="FontFile" uid="uid://o5gd3od23k32" path="res://src/assets/fonts/PressStart2P-Regular.ttf" id="3_dgbnk"]
 
 [node name="MainScreen" type="Node2D"]
 script = ExtResource("1_s5gcv")
@@ -62,6 +62,7 @@ text = "Cargar partida"
 [node name="BTN Opciones" type="Button" parent="MarginContainer/VBoxContainer2/Contenedor botones"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_dgbnk")
+disabled = true
 text = "Opciones"
 
 [node name="BTN Salir" type="Button" parent="MarginContainer/VBoxContainer2/Contenedor botones"]

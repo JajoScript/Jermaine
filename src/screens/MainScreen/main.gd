@@ -27,5 +27,4 @@ func _on_btn_opciones_button_up():
 
 
 func _on_btn_salir_button_up():
-	print("Salir!")
-	pass # Replace with function body.
+	get_tree().quit()
