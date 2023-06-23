@@ -16,7 +16,7 @@ func get_axis() -> Vector2:
 	
 func motion_ctrl() -> void:
 	velocity.x = (get_axis().x * speed);
-	velocity.y = (get_axis().y * -speed);
+	velocity.y = (get_axis().y * -(speed*2));
 
 func move_animation() -> void:
 	if (velocity.x != 0 and velocity.y == 0):
@@ -30,7 +30,7 @@ func move_animation() -> void:
 
 # Procesos.
 func _physics_process(_delta):
-	velocity.y += 50
+	velocity.y += 100
 	move_and_slide();
 	
 func _process(_delta):

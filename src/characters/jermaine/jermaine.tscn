@@ -266,7 +266,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fp6jq"]
-size = Vector2(21, 34)
+size = Vector2(21, 23)
 
 [node name="Jermaine" type="CharacterBody2D"]
 script = ExtResource("1_nkqge")
@@ -277,5 +277,5 @@ animation = &"Double jump"
 frame_progress = 0.297527
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-10.5, 7)
+position = Vector2(-10.5, 6.5)
 shape = SubResource("RectangleShape2D_fp6jq")
