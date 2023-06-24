@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://d65a736brwjg"]
+
+[ext_resource type="Script" path="res://Murcielago.gd" id="1_e1bai"]
+[ext_resource type="Texture2D" uid="uid://brg82qhop0tlm" path="res://Rocky Roads/Enemigo.png" id="2_hfuuw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdqco"]
+atlas = ExtResource("2_hfuuw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wmp0"]
+atlas = ExtResource("2_hfuuw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6033i"]
+atlas = ExtResource("2_hfuuw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n37b2"]
+atlas = ExtResource("2_hfuuw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ux8d"]
+atlas = ExtResource("2_hfuuw")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sjo6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdqco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wmp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6033i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n37b2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ux8d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrkfh"]
+
+[node name="Murcielago" type="Node2D"]
+position = Vector2(146, 97)
+
+[node name="Murcielago" type="Area2D" parent="."]
+script = ExtResource("1_e1bai")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Murcielago"]
+sprite_frames = SubResource("SpriteFrames_sjo6g")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Murcielago"]
+shape = SubResource("RectangleShape2D_rrkfh")
