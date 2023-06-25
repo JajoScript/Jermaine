@@ -60,6 +60,8 @@ interact={
 [layer_names]
 
 2d_physics/layer_2="interactions"
+2d_physics/layer_3="detections"
+2d_physics/layer_4="attacks"
 
 [rendering]
 

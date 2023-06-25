@@ -162,6 +162,11 @@ animations = [{
 "name": &"Attack",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"Damage",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j71fu")
@@ -281,7 +286,7 @@ script = ExtResource("1_nkqge")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(11, -7)
 sprite_frames = SubResource("SpriteFrames_a5a7n")
-animation = &"Idle"
+animation = &"Damage"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_fp6jq")
@@ -291,7 +296,7 @@ z_index = 1
 
 [node name="InteractArea" type="Area2D" parent="Interaction Components"]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 14
 monitorable = false
 
 [node name="InteractCollision" type="CollisionShape2D" parent="Interaction Components/InteractArea"]
@@ -309,6 +314,9 @@ theme_override_fonts/font = ExtResource("8_fa4lk")
 label_settings = SubResource("LabelSettings_ux5yx")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(11, 0)
 
 [connection signal="area_entered" from="Interaction Components/InteractArea" to="." method="_on_interact_area_area_entered"]
 [connection signal="area_exited" from="Interaction Components/InteractArea" to="." method="_on_interact_area_area_exited"]

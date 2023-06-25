@@ -1,0 +1,155 @@
+[gd_scene load_steps=23 format=3 uid="uid://oy8mhutq330i"]
+
+[ext_resource type="Script" path="res://src/sprites/Kapedrin/kapedrin.gd" id="1_nskrr"]
+[ext_resource type="Texture2D" uid="uid://bd35sxx3uu3i7" path="res://src/sprites/Kapedrin/kapedrin_attack.png" id="2_6gn57"]
+[ext_resource type="Texture2D" uid="uid://dmqqaolb1ktu" path="res://src/sprites/Kapedrin/kapedrin_idle.png" id="3_wbpj5"]
+[ext_resource type="Texture2D" uid="uid://cnwpto0o71fs0" path="res://src/sprites/Kapedrin/kapedrin_walk.png" id="4_uryen"]
+[ext_resource type="PackedScene" uid="uid://ces6yobiq4vxp" path="res://src/game components/interactArea/interact_area.tscn" id="5_wd5ic"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wivj2"]
+atlas = ExtResource("2_6gn57")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2mxi"]
+atlas = ExtResource("2_6gn57")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_737fo"]
+atlas = ExtResource("2_6gn57")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5yis"]
+atlas = ExtResource("2_6gn57")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ueeg"]
+atlas = ExtResource("2_6gn57")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1off"]
+atlas = ExtResource("2_6gn57")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2xix"]
+atlas = ExtResource("3_wbpj5")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqnym"]
+atlas = ExtResource("3_wbpj5")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y81j"]
+atlas = ExtResource("3_wbpj5")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tee7"]
+atlas = ExtResource("3_wbpj5")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nmie"]
+atlas = ExtResource("4_uryen")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3ahk"]
+atlas = ExtResource("4_uryen")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjwba"]
+atlas = ExtResource("4_uryen")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s80c8"]
+atlas = ExtResource("4_uryen")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnh44"]
+atlas = ExtResource("4_uryen")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avv57"]
+atlas = ExtResource("4_uryen")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3c25n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wivj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2mxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_737fo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5yis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ueeg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1off")
+}],
+"loop": true,
+"name": &"ATTACK",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2xix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqnym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y81j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tee7")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nmie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3ahk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjwba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s80c8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnh44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avv57")
+}],
+"loop": true,
+"name": &"WALK",
+"speed": 5.0
+}]
+
+[node name="Kapedrin" type="Node2D"]
+script = ExtResource("1_nskrr")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3c25n")
+animation = &"ATTACK"
+frame_progress = 0.203183
+
+[node name="AttackArea" parent="." instance=ExtResource("5_wd5ic")]
+position = Vector2(-4, 4)
+scale = Vector2(1.60297, 1.19884)
+interact_type = "attack"
+
+[node name="DetectArea" parent="." instance=ExtResource("5_wd5ic")]
+position = Vector2(-11, -14)
+scale = Vector2(10.7443, 3.86792)
+interact_type = "Detect"
