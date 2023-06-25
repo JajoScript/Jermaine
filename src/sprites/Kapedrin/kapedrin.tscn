@@ -1,10 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://oy8mhutq330i"]
+[gd_scene load_steps=22 format=3 uid="uid://oy8mhutq330i"]
 
 [ext_resource type="Script" path="res://src/sprites/Kapedrin/kapedrin.gd" id="1_nskrr"]
 [ext_resource type="Texture2D" uid="uid://bd35sxx3uu3i7" path="res://src/sprites/Kapedrin/kapedrin_attack.png" id="2_6gn57"]
 [ext_resource type="Texture2D" uid="uid://dmqqaolb1ktu" path="res://src/sprites/Kapedrin/kapedrin_idle.png" id="3_wbpj5"]
 [ext_resource type="Texture2D" uid="uid://cnwpto0o71fs0" path="res://src/sprites/Kapedrin/kapedrin_walk.png" id="4_uryen"]
-[ext_resource type="PackedScene" uid="uid://ces6yobiq4vxp" path="res://src/game components/interactArea/interact_area.tscn" id="5_wd5ic"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wivj2"]
 atlas = ExtResource("2_6gn57")
@@ -143,13 +142,3 @@ script = ExtResource("1_nskrr")
 sprite_frames = SubResource("SpriteFrames_3c25n")
 animation = &"ATTACK"
 frame_progress = 0.203183
-
-[node name="AttackArea" parent="." instance=ExtResource("5_wd5ic")]
-position = Vector2(-4, 4)
-scale = Vector2(1.60297, 1.19884)
-interact_type = "attack"
-
-[node name="DetectArea" parent="." instance=ExtResource("5_wd5ic")]
-position = Vector2(-11, -14)
-scale = Vector2(10.7443, 3.86792)
-interact_type = "Detect"
