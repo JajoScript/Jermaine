@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wasmrypdt3nw"
-path="res://.godot/imported/murcielago.png-e291840c27410c09d3777995f9dfc28a.ctex"
+uid="uid://y8cqcln58kq7"
+path="res://.godot/imported/chef.png-d2f2764396e54002b297b31c31947bc5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Enemies/Sprites/murcielago.png"
-dest_files=["res://.godot/imported/murcielago.png-e291840c27410c09d3777995f9dfc28a.ctex"]
+source_file="res://src/characters/chef/sprites/chef.png"
+dest_files=["res://.godot/imported/chef.png-d2f2764396e54002b297b31c31947bc5.ctex"]
 
 [params]
 
