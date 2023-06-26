@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dutws786472pw"]
+
+[ext_resource type="Script" path="res://src/Enemies/enemigo_001.gd" id="1_j77cu"]
+[ext_resource type="Texture2D" uid="uid://bqiguigi1xhnm" path="res://Rocky Roads/icicle.png" id="1_m6msi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ykyl"]
+size = Vector2(20, 24)
+
+[node name="espinas" type="Area2D"]
+script = ExtResource("1_j77cu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_m6msi")
+hframes = 9
+frame = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -12)
+shape = SubResource("RectangleShape2D_3ykyl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
