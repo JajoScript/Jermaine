@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxh6agepx0156"]
+[gd_scene load_steps=9 format=3 uid="uid://bao0acgkhc2fp"]
 
 [ext_resource type="PackedScene" uid="uid://bco8v1fn64f61" path="res://src/sprites/carrito_completos/carrito.tscn" id="5_2iys4"]
 [ext_resource type="Texture2D" uid="uid://c3uv2ftyv65sc" path="res://src/tiles/green_zone/Tile_01.png" id="5_ctj1n"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://ces6yobiq4vxp" path="res://src/game components/interactArea/interact_area.tscn" id="6_cclae"]
 [ext_resource type="Texture2D" uid="uid://b7ux5hj7she5o" path="res://src/assets/trees/Tree1.png" id="6_rrufk"]
 [ext_resource type="PackedScene" uid="uid://b75hvqgxqktrh" path="res://src/sprites/gonzalin/gonzalin.tscn" id="7_53t5q"]
-[ext_resource type="Script" path="res://src/levels/Camera2D.gd" id="7_dy6f7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7u4nu"]
 texture = ExtResource("5_ctj1n")
@@ -79,4 +78,3 @@ scale = Vector2(1.16, 1.16)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(214, 216)
 zoom = Vector2(3, 3)
-script = ExtResource("7_dy6f7")

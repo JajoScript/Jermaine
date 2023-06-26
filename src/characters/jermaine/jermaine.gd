@@ -5,6 +5,9 @@ extends CharacterBody2D
 @export var speed : int = 100;
 var axis: Vector2;
 
+var jump := -270
+const gravity := 10
+
 @onready var all_interactions = [];
 @onready var interactLabel = $"Interaction Components/IntereactLabel"
 
@@ -18,12 +21,16 @@ func get_axis() -> Vector2:
 	
 func motion_ctrl() -> void:
 	velocity.x = (get_axis().x * speed);
-	velocity.y = (get_axis().y * -(speed*2));
+	# velocity.y = (get_axis().y * -(speed*2));
 
 func move_animation() -> void:
+	
+	
 	if (velocity.x != 0 and velocity.y == 0):
 		$Sprite.play("Run")
-		$Sprite.flip_h = (velocity.x < 0)
+		$Sprite.flip_h = (velocity.x < 0);
+		# $CollisionShape2D.flip_h = (velocity.x < 0);
+		
 	elif (velocity.y != 0):
 		$Sprite.play("Double jump");
 		$Sprite.flip_h = (velocity.x < 0)
@@ -32,11 +39,18 @@ func move_animation() -> void:
 
 # Procesos.
 func _physics_process(_delta):
-	velocity.y += 100
-	move_and_slide();
-	
+	# Interacción
 	if Input.is_action_just_pressed("interact"):
 		execute_interaction()
+	
+	# Salto.
+	if is_on_floor() and Input.is_action_just_pressed("move_up"):
+		velocity.y += jump
+		
+	if !is_on_floor() :
+		velocity.y += gravity
+		
+	move_and_slide();
 	
 func _process(_delta):
 	# Animaciones

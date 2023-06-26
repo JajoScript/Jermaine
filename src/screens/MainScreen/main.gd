@@ -18,12 +18,10 @@ func _on_btn_nueva_partida_button_up():
 
 func _on_btn_cargar_partida_button_up():
 	print("Cargar partida!")
-	pass # Replace with function body.
 
 
 func _on_btn_opciones_button_up():
 	print("Opciones!")
-	pass # Replace with function body.
 
 
 func _on_btn_salir_button_up():

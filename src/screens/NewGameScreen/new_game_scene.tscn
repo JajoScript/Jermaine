@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://d20r2u0ggpfy1"]
 
 [ext_resource type="FontFile" uid="uid://o5gd3od23k32" path="res://src/assets/fonts/PressStart2P-Regular.ttf" id="1_fjawb"]
 [ext_resource type="Script" path="res://src/screens/NewGameScreen/new_game_scene.gd" id="1_yc6vl"]
@@ -25,6 +25,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 1.5
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
