@@ -1,10 +1,25 @@
 [gd_scene load_steps=8 format=3 uid="uid://cho5lww81s0tg"]
 
-[ext_resource type="Texture2D" uid="uid://c3xks6eba2oyw" path="res://src/characters/chef/sprites/chef_idle_run.png" id="1_516a4"]
 [ext_resource type="Script" path="res://src/characters/chef/chef.gd" id="1_ifdal"]
+[ext_resource type="Texture2D" uid="uid://djn6wwto8wnee" path="res://src/characters/chef/sprites/chef_idle_run_2.png" id="2_cfxhb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8br86"]
 size = Vector2(13, 23)
+
+[sub_resource type="Animation" id="Animation_pc778"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="Animation" id="Animation_vv8p5"]
 resource_name = "idle"
@@ -22,21 +37,6 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_pc778"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
 [sub_resource type="Animation" id="Animation_a52kx"]
 resource_name = "run"
 length = 1.6
@@ -48,10 +48,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [4, 5, 6, 7, 8, 9, 10]
+"values": [4, 5, 6, 7, 8, 9]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7580m"]
@@ -67,7 +67,7 @@ script = ExtResource("1_ifdal")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 4.5)
 scale = Vector2(1, 0.8875)
-texture = ExtResource("1_516a4")
+texture = ExtResource("2_cfxhb")
 hframes = 3
 vframes = 4
 frame = 1
