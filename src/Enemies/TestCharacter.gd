@@ -1,10 +1,18 @@
 extends CharacterBody2D
 
 @onready var animate = $AnimatedSprite2D
+@onready var life = $Camera2D/HUB/Sprite2D
 var direccion := 0.0
 var speed :=120
 var jump := - 300
 const gravity := 10
+var vida := 3
+
+func ser_dañado ( daño : int ) -> void :
+	vida -= daño
+	
+func changelifebar () -> void :
+	life.frame += 1
 	
 func _physics_process(delta):
 	direccion = Input.get_axis("move_left","move_right")
@@ -23,5 +31,8 @@ func _physics_process(delta):
 		
 	if !is_on_floor() :
 		velocity.y += gravity
+		
+	if vida <= 0 :
+		queue_free()
 		
 	move_and_slide()

@@ -278,3 +278,23 @@ animation = &"Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-10, 8.5)
 shape = SubResource("RectangleShape2D_fp6jq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-11, 8)
+
+[node name="Control" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -213.0
+offset_top = -120.0
+offset_right = 213.0
+offset_bottom = 121.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/Control"]
+layout_mode = 0
+offset_right = 254.0
+offset_bottom = 40.0
+
+[node name="HSlider" type="HSlider" parent="Camera2D/Control/HBoxContainer"]
+layout_mode = 2
+tick_count = 25
