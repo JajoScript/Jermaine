@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dcxvpyffw7qjp"]
+[gd_scene load_steps=18 format=3 uid="uid://dcxvpyffw7qjp"]
 
 [ext_resource type="Texture2D" uid="uid://c18spii4aylg5" path="res://Rocky Roads/Tilesets/tileset_snow.png" id="1_ay3mo"]
 [ext_resource type="Texture2D" uid="uid://c2bbrfk677e8k" path="res://Rocky Roads/Backgrounds/mountains_a.png" id="1_i38fq"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://celw2sy8nuf32" path="res://Rocky Roads/Objects/sign_arrow.png" id="8_iogu5"]
 [ext_resource type="Texture2D" uid="uid://cqe1w43pij010" path="res://Rocky Roads/Objects/sign.png" id="9_a58nw"]
 [ext_resource type="Texture2D" uid="uid://cw18uvdr4vm4w" path="res://Rocky Roads/Objects/treasure_chest.png" id="10_w8r8h"]
+[ext_resource type="PackedScene" uid="uid://ch57627pm4leb" path="res://src/characters/jermaine/jermaine.tscn" id="15_bpu3u"]
 [ext_resource type="PackedScene" uid="uid://dutws786472pw" path="res://src/Enemies/espinas.tscn" id="15_ghek5"]
 [ext_resource type="PackedScene" uid="uid://bsm4ap6w33rir" path="res://src/Enemies/murcielago.tscn" id="17_2otmd"]
 
@@ -435,7 +436,7 @@ rotation = 3.14159
 position = Vector2(680, -22)
 
 [node name="murcielago2" parent="." instance=ExtResource("17_2otmd")]
-position = Vector2(1599, 28)
+position = Vector2(1600, 27)
 
 [node name="murcielago3" parent="." instance=ExtResource("17_2otmd")]
 position = Vector2(2009, -119)
@@ -448,3 +449,11 @@ position = Vector2(2268, -233)
 
 [node name="murcielago6" parent="." instance=ExtResource("17_2otmd")]
 position = Vector2(2265, -452)
+
+[node name="Jermaine" parent="." instance=ExtResource("15_bpu3u")]
+position = Vector2(87, 161)
+scale = Vector2(0.8, 0.8)
+
+[node name="Camera2D" type="Camera2D" parent="Jermaine"]
+position = Vector2(7, -66)
+zoom = Vector2(3, 3)

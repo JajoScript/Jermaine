@@ -287,7 +287,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fp6jq"]
-size = Vector2(16, 27)
+size = Vector2(19, 34.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0i17h"]
 radius = 22.2036
@@ -297,6 +297,7 @@ font = ExtResource("8_fa4lk")
 shadow_size = 0
 
 [node name="Jermaine" type="CharacterBody2D"]
+position = Vector2(1, -1)
 script = ExtResource("1_nkqge")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
@@ -305,7 +306,7 @@ sprite_frames = SubResource("SpriteFrames_a5a7n")
 animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-10, 8.5)
+position = Vector2(0.5, 0.25)
 shape = SubResource("RectangleShape2D_fp6jq")
 
 [node name="Interaction Components" type="Node2D" parent="."]
