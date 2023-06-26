@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://csdrya3yh8dei"]
+
+[ext_resource type="Script" path="res://src/enemies/enemigo1.gd" id="1_2gw5f"]
+[ext_resource type="Texture2D" uid="uid://ddnnrayxha82k" path="res://src/characters/enemigo1/Dio.png" id="1_a2w8q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vffpc"]
+size = Vector2(38, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n387i"]
+atlas = ExtResource("1_a2w8q")
+region = Rect2(0, 0, 47, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxhmk"]
+atlas = ExtResource("1_a2w8q")
+region = Rect2(47, 0, 47, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywhk3"]
+atlas = ExtResource("1_a2w8q")
+region = Rect2(94, 0, 47, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5unny"]
+atlas = ExtResource("1_a2w8q")
+region = Rect2(188, 0, 47, 73)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0hb81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n387i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxhmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywhk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5unny")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Planta" type="CharacterBody2D"]
+position = Vector2(167, 107)
+script = ExtResource("1_2gw5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-2, 1.5)
+shape = SubResource("RectangleShape2D_vffpc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
+sprite_frames = SubResource("SpriteFrames_0hb81")
+frame_progress = 0.563605
+
+[node name="deteccionSuelo" type="RayCast2D" parent="AnimatedSprite2D"]
+visible = false
+position = Vector2(22, 0)
+target_position = Vector2(0, 45)
+collision_mask = 517
+
+[node name="izquierda" type="RayCast2D" parent="."]
+visible = false
+target_position = Vector2(-30, 0)
+
+[node name="derecha" type="RayCast2D" parent="."]
+visible = false
+target_position = Vector2(30, 0)

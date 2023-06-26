@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://02vhrhymxnri"]
+
+[ext_resource type="Texture2D" uid="uid://ddnnrayxha82k" path="res://src/characters/enemigo1/Dio.png" id="1_sd5sp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n387i"]
+atlas = ExtResource("1_sd5sp")
+region = Rect2(0, 0, 47, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxhmk"]
+atlas = ExtResource("1_sd5sp")
+region = Rect2(47, 0, 47, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywhk3"]
+atlas = ExtResource("1_sd5sp")
+region = Rect2(94, 0, 47, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5unny"]
+atlas = ExtResource("1_sd5sp")
+region = Rect2(188, 0, 47, 73)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0hb81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n387i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxhmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywhk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5unny")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(167, 107)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(37, 7)
+sprite_frames = SubResource("SpriteFrames_0hb81")
+frame_progress = 0.0809952

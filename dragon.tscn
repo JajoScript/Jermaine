@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://cdevv4k58nbgh"]
+
+[ext_resource type="Texture2D" uid="uid://hn4q5c258cq8" path="res://src/characters/dinosaruioTierra/walk.png" id="1_wlog6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0jas"]
+atlas = ExtResource("1_wlog6")
+region = Rect2(0, 0, 39, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl3xq"]
+atlas = ExtResource("1_wlog6")
+region = Rect2(39, 0, 39, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnhjq"]
+atlas = ExtResource("1_wlog6")
+region = Rect2(78, 0, 39, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cjkg"]
+atlas = ExtResource("1_wlog6")
+region = Rect2(117, 0, 39, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlma1"]
+atlas = ExtResource("1_wlog6")
+region = Rect2(156, 0, 39, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efda8"]
+atlas = ExtResource("1_wlog6")
+region = Rect2(195, 0, 39, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8d7o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0jas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl3xq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnhjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cjkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlma1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efda8")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xs3o"]
+size = Vector2(31, 38)
+
+[node name="Node2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g8d7o")
+animation = &"walk"
+frame_progress = 0.92368
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 1)
+shape = SubResource("RectangleShape2D_2xs3o")

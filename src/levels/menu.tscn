@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxt0bhg825o62"]
+
+[ext_resource type="Script" path="res://src/Scripts/Menu.gd" id="1_hb1oj"]
+[ext_resource type="Texture2D" uid="uid://duw0ob4kanre7" path="res://src/backgrounds/nature-landscape-pixel-art-pixelated-pixels-hd-wallpaper-preview (1).jpg" id="2_6cmrf"]
+[ext_resource type="FontFile" uid="uid://cqfl7s6pu6gq8" path="res://src/fonts/Kenney Pixel Square.ttf" id="3_fg8sx"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hb1oj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -151.0
+offset_top = -85.0
+offset_right = 151.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6cmrf")
+stretch_mode = 6
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Botones" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Button" type="Button" parent="CenterContainer/PanelContainer/Botones"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_fg8sx")
+theme_override_font_sizes/font_size = 15
+text = "Nueva Partida"

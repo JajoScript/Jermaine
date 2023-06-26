@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://c233fwxexf55"]
+
+[ext_resource type="Texture2D" uid="uid://brsfm7cgnqwkn" path="res://src/characters/snowmanNPC/SnowmanSheet.png" id="1_gawaq"]
+[ext_resource type="Texture2D" uid="uid://dfivhloyvia82" path="res://src/characters/snowmanNPC/SnowmanTalk-Sheet.png" id="2_h3sgb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bagi"]
+atlas = ExtResource("1_gawaq")
+region = Rect2(0, 0, 454, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erlt1"]
+atlas = ExtResource("1_gawaq")
+region = Rect2(454, 0, 454, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnyif"]
+atlas = ExtResource("1_gawaq")
+region = Rect2(908, 0, 454, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4f34"]
+atlas = ExtResource("2_h3sgb")
+region = Rect2(0, 0, 454, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4it4"]
+atlas = ExtResource("2_h3sgb")
+region = Rect2(454, 0, 454, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rd3tj"]
+atlas = ExtResource("2_h3sgb")
+region = Rect2(908, 0, 454, 395)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_31byn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bagi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erlt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnyif")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4f34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4it4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rd3tj")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}]
+
+[node name="Snowman" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(168.67, 146.75)
+scale = Vector2(0.256962, 0.256962)
+sprite_frames = SubResource("SpriteFrames_31byn")
+animation = &"talk"
+frame_progress = 0.151335
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
