@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://oy8mhutq330i"]
+[gd_scene load_steps=23 format=3 uid="uid://oy8mhutq330i"]
 
 [ext_resource type="Script" path="res://src/sprites/Kapedrin/kapedrin.gd" id="1_nskrr"]
 [ext_resource type="Texture2D" uid="uid://bd35sxx3uu3i7" path="res://src/sprites/Kapedrin/kapedrin_attack.png" id="2_6gn57"]
@@ -135,10 +135,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdvwq"]
+size = Vector2(36, 23)
+
 [node name="Kapedrin" type="Node2D"]
 script = ExtResource("1_nskrr")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3c25n")
 animation = &"ATTACK"
-frame_progress = 0.203183
+frame = 5
+frame_progress = 0.0900764
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(-3, 3.5)
+shape = SubResource("RectangleShape2D_jdvwq")
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

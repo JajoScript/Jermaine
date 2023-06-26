@@ -57,7 +57,8 @@ centered = false
 
 [node name="Jermaine" parent="." instance=ExtResource("5_qv1de")]
 z_index = 2
-position = Vector2(240, 288)
+position = Vector2(241, 289)
+scale = Vector2(0.9, 0.9)
 
 [node name="Carrito" parent="." instance=ExtResource("5_2iys4")]
 z_index = 1

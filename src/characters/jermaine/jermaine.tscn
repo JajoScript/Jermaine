@@ -1,8 +1,9 @@
-[gd_scene load_steps=45 format=3 uid="uid://ch57627pm4leb"]
+[gd_scene load_steps=48 format=3 uid="uid://ch57627pm4leb"]
 
 [ext_resource type="Script" path="res://src/characters/jermaine/jermaine.gd" id="1_nkqge"]
 [ext_resource type="Texture2D" uid="uid://bu2byt1vpwbq7" path="res://src/characters/jermaine/sprites/attack.png" id="2_lx5b5"]
 [ext_resource type="Texture2D" uid="uid://dyib03xmentwp" path="res://src/characters/jermaine/sprites/death.png" id="2_u0npj"]
+[ext_resource type="Texture2D" uid="uid://d28o5kftplkbt" path="res://src/characters/jermaine/sprites/damage.png" id="3_nldbp"]
 [ext_resource type="Texture2D" uid="uid://budm0rhxninve" path="res://src/characters/jermaine/sprites/idle.png" id="3_tky63"]
 [ext_resource type="Texture2D" uid="uid://dqm4dj5qf3um2" path="res://src/characters/jermaine/sprites/double_jump.png" id="4_322p1"]
 [ext_resource type="Texture2D" uid="uid://pgqx4qn50204" path="res://src/characters/jermaine/sprites/jump.png" id="4_s24bw"]
@@ -32,6 +33,14 @@ region = Rect2(192, 0, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8d5g4"]
 atlas = ExtResource("2_lx5b5")
 region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juado"]
+atlas = ExtResource("3_nldbp")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d58ye"]
+atlas = ExtResource("3_nldbp")
+region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j71fu"]
 atlas = ExtResource("2_u0npj")
@@ -162,7 +171,13 @@ animations = [{
 "name": &"Attack",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juado")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d58ye")
+}],
 "loop": true,
 "name": &"Damage",
 "speed": 5.0
@@ -279,6 +294,7 @@ radius = 22.2036
 
 [sub_resource type="LabelSettings" id="LabelSettings_ux5yx"]
 font = ExtResource("8_fa4lk")
+shadow_size = 0
 
 [node name="Jermaine" type="CharacterBody2D"]
 script = ExtResource("1_nkqge")
@@ -304,19 +320,16 @@ visible = false
 shape = SubResource("CircleShape2D_0i17h")
 
 [node name="IntereactLabel" type="Label" parent="Interaction Components"]
-offset_left = -11.0
-offset_top = -22.0
-offset_right = 71.0
-offset_bottom = 4.0
-scale = Vector2(0.313384, 0.157592)
+offset_left = -12.0
+offset_top = -31.0
+offset_right = 70.0
+offset_bottom = 25.0
+scale = Vector2(0.3, 0.3)
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("8_fa4lk")
 label_settings = SubResource("LabelSettings_ux5yx")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(11, 0)
 
 [connection signal="area_entered" from="Interaction Components/InteractArea" to="." method="_on_interact_area_area_entered"]
 [connection signal="area_exited" from="Interaction Components/InteractArea" to="." method="_on_interact_area_area_exited"]

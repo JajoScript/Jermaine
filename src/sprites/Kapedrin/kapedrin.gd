@@ -1,5 +1,9 @@
 extends Node2D
 
+# Señales
+signal hit(damage);
+
+var damage: int = 1;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,8 +15,9 @@ func _process(_delta):
 	pass
 
 
-func _on_mouse_entered():
-	print("Mouse entered")
-	pass # Replace with function body.
 
-
+func _on_attack_area_body_entered(_body):
+	print(_body)
+	print("huele a culo")
+	emit_signal("hit", damage)
+	

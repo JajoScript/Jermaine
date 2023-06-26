@@ -1,6 +1,5 @@
 # Dependencias.
 extends CharacterBody2D
-signal hit
 
 # Variables.
 @export var speed : int = 100;
