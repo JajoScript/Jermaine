@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wasmrypdt3nw"
-path="res://.godot/imported/murcielago.png-d5e5f87c5a111a621e7f35c368ebcb29.ctex"
+uid="uid://cdnocfgbbif3h"
+path="res://.godot/imported/joao-vitor-de-lorenzi-jardim-crystalcavemockup (1).jpg-c9fe8eaacddad6fab879015bc4dbbf46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/enemies/Sprites/murcielago.png"
-dest_files=["res://.godot/imported/murcielago.png-d5e5f87c5a111a621e7f35c368ebcb29.ctex"]
+source_file="res://src/backgrounds/joao-vitor-de-lorenzi-jardim-crystalcavemockup (1).jpg"
+dest_files=["res://.godot/imported/joao-vitor-de-lorenzi-jardim-crystalcavemockup (1).jpg-c9fe8eaacddad6fab879015bc4dbbf46.ctex"]
 
 [params]
 
