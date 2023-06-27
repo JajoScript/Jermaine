@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dcxvpyffw7qjp"]
+[gd_scene load_steps=18 format=3 uid="uid://dcxvpyffw7qjp"]
 
 [ext_resource type="Texture2D" uid="uid://c18spii4aylg5" path="res://Rocky Roads/Tilesets/tileset_snow.png" id="1_ay3mo"]
 [ext_resource type="Texture2D" uid="uid://c2bbrfk677e8k" path="res://Rocky Roads/Backgrounds/mountains_a.png" id="1_i38fq"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://dpy0mq20tc16u" path="res://src/Enemies/test_character.tscn" id="15_g7750"]
 [ext_resource type="PackedScene" uid="uid://cp4tcm7irfmap" path="res://src/Enemies/espinas.tscn" id="15_ghek5"]
 [ext_resource type="PackedScene" uid="uid://buyprgdyxhljr" path="res://src/Enemies/dragon.tscn" id="16_cxkjj"]
-[ext_resource type="PackedScene" uid="uid://bsm4ap6w33rir" path="res://src/Enemies/murcielago.tscn" id="17_2otmd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ij43r"]
 resource_name = "Montaña"
@@ -433,26 +432,26 @@ rotation = -3.14159
 position = Vector2(1189, 247)
 rotation = 3.14159
 
-[node name="murcielago2" parent="." instance=ExtResource("17_2otmd")]
-position = Vector2(1599, 28)
-
-[node name="murcielago3" parent="." instance=ExtResource("17_2otmd")]
-position = Vector2(2009, -119)
-
-[node name="murcielago4" parent="." instance=ExtResource("17_2otmd")]
-position = Vector2(2277, 297)
-
-[node name="murcielago5" parent="." instance=ExtResource("17_2otmd")]
-position = Vector2(2268, -233)
-
-[node name="murcielago6" parent="." instance=ExtResource("17_2otmd")]
-position = Vector2(2265, -452)
-
 [node name="TestCharacter" parent="." instance=ExtResource("15_g7750")]
-position = Vector2(85, 92)
+position = Vector2(1863, -205)
 
 [node name="Dragon" parent="." instance=ExtResource("16_cxkjj")]
-position = Vector2(225, -3)
+position = Vector2(238, -1)
 
 [node name="Dragon2" parent="." instance=ExtResource("16_cxkjj")]
-position = Vector2(541, -139)
+position = Vector2(506, -149)
+
+[node name="Dragon3" parent="." instance=ExtResource("16_cxkjj")]
+position = Vector2(1433, -96)
+
+[node name="Dragon4" parent="." instance=ExtResource("16_cxkjj")]
+position = Vector2(1828, -234)
+
+[node name="Dragon5" parent="." instance=ExtResource("16_cxkjj")]
+position = Vector2(2102, 168)
+
+[node name="Dragon6" parent="." instance=ExtResource("16_cxkjj")]
+position = Vector2(2070, -355)
+
+[node name="Dragon7" parent="." instance=ExtResource("16_cxkjj")]
+position = Vector2(2070, -563)

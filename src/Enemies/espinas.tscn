@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bqiguigi1xhnm" path="res://Rocky Roads/icicle.png" id="1_m6msi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ykyl"]
-size = Vector2(20, 24)
+size = Vector2(13, 25)
 
 [node name="espinas" type="Area2D"]
 script = ExtResource("1_dhaa5")
@@ -15,7 +15,7 @@ hframes = 9
 frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -12)
+position = Vector2(0.5, -11.5)
 shape = SubResource("RectangleShape2D_3ykyl")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

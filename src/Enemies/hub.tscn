@@ -5,6 +5,7 @@
 [node name="HUB" type="CanvasLayer"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(46, 29)
+position = Vector2(184, 86)
+scale = Vector2(6.38221, 7.035)
 texture = ExtResource("1_0qror")
 vframes = 4

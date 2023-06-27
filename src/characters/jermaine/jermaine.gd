@@ -5,7 +5,8 @@ extends CharacterBody2D
 @export var speed : int = 100;
 var axis: Vector2;
 
-var jump := -270
+var jump := -275
+var life := 3 
 const gravity := 10
 
 @onready var all_interactions = [];
@@ -23,6 +24,10 @@ func get_axis() -> Vector2:
 func motion_ctrl() -> void:
 	velocity.x = (get_axis().x * speed);
 	# velocity.y = (get_axis().y * -(speed*2));
+	
+func damage_control( damage : int ) -> void:
+	life -= damage
+	$Camera2D/HUB/Sprite2D.frame += damage
 
 func move_animation() -> void:
 	
@@ -60,6 +65,8 @@ func _process(_delta):
 	
 	# Control del jugador.
 	motion_ctrl();
+	if life <= 0 :
+		queue_free()
 	move_animation();
 
 
