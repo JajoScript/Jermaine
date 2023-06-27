@@ -59,12 +59,13 @@ animations = [{
 }]
 
 [node name="Snowman" type="Node2D"]
+position = Vector2(72, 19)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(168.67, 146.75)
-scale = Vector2(0.256962, 0.256962)
+position = Vector2(-32.4411, 9.875)
+scale = Vector2(0.136076, 0.136076)
 sprite_frames = SubResource("SpriteFrames_31byn")
 animation = &"talk"
-frame_progress = 0.151335
+frame_progress = 0.95863
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

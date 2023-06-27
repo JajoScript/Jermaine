@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://hn4q5c258cq8" path="res://src/characters/dinosaruioTierra/walk.png" id="1_wlog6"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xs3o"]
+size = Vector2(31, 38)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0jas"]
 atlas = ExtResource("1_wlog6")
 region = Rect2(0, 0, 39, 41)
@@ -52,18 +55,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xs3o"]
-size = Vector2(31, 38)
-
 [node name="Node2D" type="CharacterBody2D"]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_g8d7o")
-animation = &"walk"
-frame_progress = 0.92368
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 1)
 shape = SubResource("RectangleShape2D_2xs3o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g8d7o")
+animation = &"walk"
+frame_progress = 0.342058
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

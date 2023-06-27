@@ -63,7 +63,7 @@ shape = SubResource("RectangleShape2D_d8tuy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_heqc8")
-frame_progress = 0.232617
+frame_progress = 0.224457
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
