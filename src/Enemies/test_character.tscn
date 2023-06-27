@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dpy0mq20tc16u"]
+[gd_scene load_steps=11 format=3 uid="uid://dpy0mq20tc16u"]
 
 [ext_resource type="Script" path="res://src/enemies/TestCharacter.gd" id="1_arycx"]
 [ext_resource type="Texture2D" uid="uid://cbl5ky2y8pbfe" path="res://src/Enemies/Sprites/penguin.png" id="1_bi6jb"]
+[ext_resource type="PackedScene" uid="uid://4senjo5c3eb0" path="res://src/Enemies/hub.tscn" id="3_mvhce"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6cv0"]
 atlas = ExtResource("1_bi6jb")
@@ -71,3 +72,5 @@ shape = SubResource("RectangleShape2D_1853w")
 
 [node name="Camera2D" type="Camera2D" parent="TestCharacter"]
 position = Vector2(1, -62)
+
+[node name="HUB" parent="TestCharacter/Camera2D" instance=ExtResource("3_mvhce")]

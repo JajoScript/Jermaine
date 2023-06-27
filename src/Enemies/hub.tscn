@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://4senjo5c3eb0"]
+
+[ext_resource type="Texture2D" uid="uid://cu4tdfgkku53x" path="res://src/assets/HUB/New Piskel.png" id="1_0qror"]
+
+[node name="HUB" type="CanvasLayer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(46, 29)
+texture = ExtResource("1_0qror")
+vframes = 4
