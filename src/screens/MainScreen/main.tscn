@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://cayf811nkt68t"]
+
+[ext_resource type="Texture2D" uid="uid://dn32idlswtkbf" path="res://src/assets/splash/background.png" id="1_b8nnw"]
+[ext_resource type="Script" path="res://src/screens/MainScreen/main.gd" id="1_s5gcv"]
+[ext_resource type="FontFile" uid="uid://o5gd3od23k32" path="res://src/assets/fonts/PressStart2P-Regular.ttf" id="3_dgbnk"]
+
+[node name="MainScreen" type="Node2D"]
+script = ExtResource("1_s5gcv")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_b8nnw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 200
+
+[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dgbnk")
+theme_override_font_sizes/font_size = 30
+text = "Jermaine The Chef"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Contenedor botones" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+
+[node name="BTN Nueva partida" type="Button" parent="MarginContainer/VBoxContainer2/Contenedor botones"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dgbnk")
+text = "Nueva partida"
+
+[node name="BTN Cargar partida" type="Button" parent="MarginContainer/VBoxContainer2/Contenedor botones"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dgbnk")
+disabled = true
+text = "Cargar partida"
+
+[node name="BTN Opciones" type="Button" parent="MarginContainer/VBoxContainer2/Contenedor botones"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dgbnk")
+disabled = true
+text = "Opciones"
+
+[node name="BTN Salir" type="Button" parent="MarginContainer/VBoxContainer2/Contenedor botones"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dgbnk")
+text = "Salir"
+
+[connection signal="button_up" from="MarginContainer/VBoxContainer2/Contenedor botones/BTN Nueva partida" to="." method="_on_btn_nueva_partida_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer2/Contenedor botones/BTN Cargar partida" to="." method="_on_btn_cargar_partida_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer2/Contenedor botones/BTN Opciones" to="." method="_on_btn_opciones_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer2/Contenedor botones/BTN Salir" to="." method="_on_btn_salir_button_up"]

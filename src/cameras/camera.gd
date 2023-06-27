@@ -1,5 +1,6 @@
 extends Camera2D
-@onready var player = get_node("/root/Mundo/Jermaine");
+#@onready var player = get_node("/root/Mundo/Jermaine");
+@onready var player = get_node("")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,5 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	position = player.position;
+	position.x = player.position.x;
+	
+	
 	

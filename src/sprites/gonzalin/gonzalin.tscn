@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://b75hvqgxqktrh"]
+
+[ext_resource type="Script" path="res://src/sprites/gonzalin/gonzalin.gd" id="1_nxj3q"]
+[ext_resource type="Texture2D" uid="uid://c6ebtpi0cv7u7" path="res://src/sprites/gonzalin/gonzalin_idle.png" id="1_u8lbn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wi34"]
+atlas = ExtResource("1_u8lbn")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8nfw"]
+atlas = ExtResource("1_u8lbn")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o07ht"]
+atlas = ExtResource("1_u8lbn")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7ymy"]
+atlas = ExtResource("1_u8lbn")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6hbi8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wi34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8nfw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o07ht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7ymy")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sm04g"]
+size = Vector2(31, 45)
+
+[node name="Gonzalin" type="CharacterBody2D"]
+position = Vector2(-2, -3)
+script = ExtResource("1_nxj3q")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.800001, 0.800001)
+sprite_frames = SubResource("SpriteFrames_6hbi8")
+animation = &"Idle"
+frame = 1
+frame_progress = 0.466332
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_sm04g")
+disabled = true

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c1cvo2ppoeep8"]
+
+[node name="TEST" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Polygon2D" type="Polygon2D" parent="MarginContainer"]
+position = Vector2(18, 17)
+color = Color(0.898039, 0.47451, 0.94902, 1)
+offset = Vector2(-46, -15)
+polygon = PackedVector2Array(48, 8, 53, 19, 41, 17, 44, 12)
