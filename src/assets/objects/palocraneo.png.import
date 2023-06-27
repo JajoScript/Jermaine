@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wasmrypdt3nw"
-path="res://.godot/imported/murcielago.png-d5e5f87c5a111a621e7f35c368ebcb29.ctex"
+uid="uid://br1mr1k55kopj"
+path="res://.godot/imported/palocraneo.png-f9b683b6789c29880bb7e8e2692eec54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/enemies/Sprites/murcielago.png"
-dest_files=["res://.godot/imported/murcielago.png-d5e5f87c5a111a621e7f35c368ebcb29.ctex"]
+source_file="res://src/assets/objects/palocraneo.png"
+dest_files=["res://.godot/imported/palocraneo.png-f9b683b6789c29880bb7e8e2692eec54.ctex"]
 
 [params]
 

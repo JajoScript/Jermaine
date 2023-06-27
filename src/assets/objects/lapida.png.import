@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wasmrypdt3nw"
-path="res://.godot/imported/murcielago.png-d5e5f87c5a111a621e7f35c368ebcb29.ctex"
+uid="uid://bgqw5akp55qfv"
+path="res://.godot/imported/lapida.png-2259bb3fb0f00fa73689d68e56ca3755.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/enemies/Sprites/murcielago.png"
-dest_files=["res://.godot/imported/murcielago.png-d5e5f87c5a111a621e7f35c368ebcb29.ctex"]
+source_file="res://src/assets/objects/lapida.png"
+dest_files=["res://.godot/imported/lapida.png-2259bb3fb0f00fa73689d68e56ca3755.ctex"]
 
 [params]
 

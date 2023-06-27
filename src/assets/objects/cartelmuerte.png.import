@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wasmrypdt3nw"
-path="res://.godot/imported/murcielago.png-d5e5f87c5a111a621e7f35c368ebcb29.ctex"
+uid="uid://cbij37kqdnepg"
+path="res://.godot/imported/cartelmuerte.png-85d036e4bcbd39e30df1371eddc30ddb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/enemies/Sprites/murcielago.png"
-dest_files=["res://.godot/imported/murcielago.png-d5e5f87c5a111a621e7f35c368ebcb29.ctex"]
+source_file="res://src/assets/objects/cartelmuerte.png"
+dest_files=["res://.godot/imported/cartelmuerte.png-85d036e4bcbd39e30df1371eddc30ddb.ctex"]
 
 [params]
 

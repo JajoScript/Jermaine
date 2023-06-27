@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wasmrypdt3nw"
-path="res://.godot/imported/murcielago.png-d5e5f87c5a111a621e7f35c368ebcb29.ctex"
+uid="uid://cetak28o5sjn0"
+path="res://.godot/imported/fondo mina.png-ae7515e6303f961b9ccee3a9a715869b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/enemies/Sprites/murcielago.png"
-dest_files=["res://.godot/imported/murcielago.png-d5e5f87c5a111a621e7f35c368ebcb29.ctex"]
+source_file="res://src/levels/Nivel3/fondo mina.png"
+dest_files=["res://.godot/imported/fondo mina.png-ae7515e6303f961b9ccee3a9a715869b.ctex"]
 
 [params]
 

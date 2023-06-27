@@ -7,6 +7,7 @@ var axis: Vector2;
 
 var jump := -275
 const gravity := 10
+var life := 3
 
 @onready var all_interactions = [];
 @onready var interactLabel = $"Interaction Components/IntereactLabel"
@@ -22,6 +23,10 @@ func get_axis() -> Vector2:
 func motion_ctrl() -> void:
 	velocity.x = (get_axis().x * speed);
 	# velocity.y = (get_axis().y * -(speed*2));
+
+func damage_control( damage : int ) -> void:
+	life -= damage
+	$Camera2D/HUB/Sprite2D.frame += damage
 
 func move_animation() -> void:
 	if (velocity.x != 0 and velocity.y == 0):
@@ -64,6 +69,8 @@ func _process(_delta):
 	
 	# Control del jugador.
 	motion_ctrl();
+	if life <= 0:
+		queue_free()
 	move_animation();
 
 

@@ -1,30 +1,31 @@
-[gd_scene load_steps=10 format=3 uid="uid://c233fwxexf55"]
+[gd_scene load_steps=11 format=3 uid="uid://cw6p6dlc7ohy1"]
 
-[ext_resource type="Texture2D" uid="uid://brsfm7cgnqwkn" path="res://src/characters/snowmanNPC/SnowmanSheet.png" id="1_gawaq"]
-[ext_resource type="Texture2D" uid="uid://dfivhloyvia82" path="res://src/characters/snowmanNPC/SnowmanTalk-Sheet.png" id="2_h3sgb"]
+[ext_resource type="Texture2D" uid="uid://brsfm7cgnqwkn" path="res://src/characters/snowmanNPC/SnowmanSheet.png" id="1_0aj1c"]
+[ext_resource type="Script" path="res://src/sprites/Snowman/snowman.gd" id="1_bk8xc"]
+[ext_resource type="Texture2D" uid="uid://dfivhloyvia82" path="res://src/characters/snowmanNPC/SnowmanTalk-Sheet.png" id="2_5lv2k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6bagi"]
-atlas = ExtResource("1_gawaq")
+atlas = ExtResource("1_0aj1c")
 region = Rect2(0, 0, 454, 395)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_erlt1"]
-atlas = ExtResource("1_gawaq")
+atlas = ExtResource("1_0aj1c")
 region = Rect2(454, 0, 454, 395)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hnyif"]
-atlas = ExtResource("1_gawaq")
+atlas = ExtResource("1_0aj1c")
 region = Rect2(908, 0, 454, 395)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k4f34"]
-atlas = ExtResource("2_h3sgb")
+atlas = ExtResource("2_5lv2k")
 region = Rect2(0, 0, 454, 395)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v4it4"]
-atlas = ExtResource("2_h3sgb")
+atlas = ExtResource("2_5lv2k")
 region = Rect2(454, 0, 454, 395)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rd3tj"]
-atlas = ExtResource("2_h3sgb")
+atlas = ExtResource("2_5lv2k")
 region = Rect2(908, 0, 454, 395)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_31byn"]
@@ -60,12 +61,11 @@ animations = [{
 
 [node name="Snowman" type="Node2D"]
 position = Vector2(72, 19)
+script = ExtResource("1_bk8xc")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, -7)
 scale = Vector2(0.136076, 0.136076)
 sprite_frames = SubResource("SpriteFrames_31byn")
 animation = &"talk"
-frame_progress = 0.95863
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+frame_progress = 0.701841
