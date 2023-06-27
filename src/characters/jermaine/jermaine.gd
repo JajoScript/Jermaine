@@ -40,7 +40,7 @@ func move_animation() -> void:
 	else:
 		$Sprite.play("Idle")
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("menu") and get_tree().paused == false:
 		get_tree().paused = true
 	#	$Pause.visible = true

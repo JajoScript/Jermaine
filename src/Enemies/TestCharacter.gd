@@ -33,6 +33,8 @@ func _physics_process(_delta):
 		velocity.y += gravity
 		
 	if vida <= 0 :
+		# Redireccion hacia la vista deathScreen
 		queue_free()
+		get_tree().change_scene_to_file("res://src/screens/DeathScreen/death_screen.tscn")
 		
 	move_and_slide()

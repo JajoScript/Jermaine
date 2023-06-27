@@ -53,12 +53,14 @@ theme_override_fonts/font = ExtResource("3_dgbnk")
 text = "Nueva partida"
 
 [node name="BTN Cargar partida" type="Button" parent="MarginContainer/VBoxContainer2/Contenedor botones"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_dgbnk")
 disabled = true
 text = "Cargar partida"
 
 [node name="BTN Opciones" type="Button" parent="MarginContainer/VBoxContainer2/Contenedor botones"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_dgbnk")
 disabled = true
