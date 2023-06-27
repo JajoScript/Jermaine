@@ -24,7 +24,6 @@ func change_level():
 	if (id_level == "Mundo_01"):
 		if (location == "Comienzo"):
 			print("Debo cambiar la Mundo_01")
-		
 		else:
 			print("Debo cambiar la Mundo_02")
 			get_tree().change_scene_to_file("res://src/levels/Mundo 02/mundo_02.tscn")

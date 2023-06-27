@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://i8r4ijlaxq28"]
+
+[ext_resource type="Texture2D" uid="uid://2eb0r2kdjohm" path="res://src/sprites/chancho/chancho.png" id="1_6sey0"]
+[ext_resource type="PackedScene" uid="uid://ces6yobiq4vxp" path="res://src/game components/interactArea/interact_area.tscn" id="2_ka57d"]
+
+[node name="Chancho" type="Node2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_6sey0")
+
+[node name="InteractArea" parent="." instance=ExtResource("2_ka57d")]
+scale = Vector2(5.32, 5.48)
+interact_label = ""
+interact_type = "print_text"
+interact_value = "No habia visto un chancho asi desde que estaba vivo mi general"

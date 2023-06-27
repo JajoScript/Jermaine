@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ggyft5yg4ty6"]
+
+[ext_resource type="Texture2D" uid="uid://cbl20pwi6qrtt" path="res://src/sprites/Backgrounds/exclusion_1/1.png" id="1_nu8ev"]
+
+[node name="Exclusion bg 01" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nu8ev")

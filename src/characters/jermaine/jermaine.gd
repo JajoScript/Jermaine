@@ -5,12 +5,11 @@ extends CharacterBody2D
 @export var speed : int = 100;
 var axis: Vector2;
 
-var jump := -270
+var jump := -275
 const gravity := 10
 
 @onready var all_interactions = [];
-@onready var interactPanel = $"Interaction Components/IntereactPanel"
-@onready var interactLabel = $"Interaction Components/IntereactPanel/IntereactLabel"
+@onready var interactLabel = $"Interaction Components/IntereactLabel"
 
 # Metodos.
 func get_axis() -> Vector2:
@@ -25,8 +24,6 @@ func motion_ctrl() -> void:
 	# velocity.y = (get_axis().y * -(speed*2));
 
 func move_animation() -> void:
-	
-	
 	if (velocity.x != 0 and velocity.y == 0):
 		$Sprite.play("Run")
 		$Sprite.flip_h = (velocity.x < 0);
@@ -39,6 +36,8 @@ func move_animation() -> void:
 		$Sprite.play("Idle")
 
 # Procesos.
+func _ready():
+	interactLabel.visible = false;
 func _physics_process(_delta):
 	# Interacción
 	if Input.is_action_just_pressed("interact"):
@@ -78,7 +77,7 @@ func update_interaction():
 		$"Interaction Components/KeySprite".visible = true;
 	else:
 		$"Interaction Components/KeySprite".visible = false;
-		interactPanel.visible = false;
+		interactLabel.visible = false;
 		interactLabel.text = ""
 		
 
@@ -89,5 +88,6 @@ func execute_interaction():
 		match cur_interaction.interact_type:
 			"print_text":
 				$"Interaction Components/KeySprite".visible = false;
-				interactPanel.visible = true;
+				interactLabel.visible = true;
 				interactLabel.text = cur_interaction.interact_value
+

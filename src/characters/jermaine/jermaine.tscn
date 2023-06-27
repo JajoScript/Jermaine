@@ -230,7 +230,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_t0ig5")
 }, {
 "duration": 1.0,
@@ -315,20 +315,29 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vfxx7"]
-bg_color = Color(0.137255, 0.137255, 0.137255, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
+[sub_resource type="Theme" id="Theme_udnrp"]
+default_font = ExtResource("8_fa4lk")
+default_font_size = 12
 
-[sub_resource type="LabelSettings" id="LabelSettings_ux5yx"]
-font = ExtResource("8_fa4lk")
-shadow_size = 0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewwy6"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.0666667, 0.141176, 0.160784, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.289093, 0.480672, 0.531521, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [node name="Jermaine" type="CharacterBody2D"]
 script = ExtResource("1_nkqge")
@@ -361,22 +370,31 @@ position = Vector2(0, -23)
 sprite_frames = SubResource("SpriteFrames_t88s4")
 animation = &"show_key"
 
-[node name="IntereactPanel" type="PanelContainer" parent="Interaction Components"]
+[node name="IntereactLabel" type="RichTextLabel" parent="Interaction Components"]
 visible = false
-offset_left = -6.0
-offset_top = -26.0
-offset_right = 58.0
-offset_bottom = 10.0
-scale = Vector2(0.2, 0.2)
-theme_override_styles/panel = SubResource("StyleBoxFlat_vfxx7")
-
-[node name="IntereactLabel" type="Label" parent="Interaction Components/IntereactPanel"]
-layout_mode = 2
+clip_contents = false
+custom_minimum_size = Vector2(20, 20)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -28.0
+offset_right = 162.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("8_fa4lk")
-label_settings = SubResource("LabelSettings_ux5yx")
-horizontal_alignment = 1
-vertical_alignment = 1
+size_flags_vertical = 4
+theme = SubResource("Theme_udnrp")
+theme_override_fonts/normal_font = ExtResource("8_fa4lk")
+theme_override_font_sizes/normal_font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_ewwy6")
+fit_content = true
+scroll_following = true
+tab_size = 1
 
 [connection signal="area_entered" from="Interaction Components/InteractArea" to="." method="_on_interact_area_area_entered"]
 [connection signal="area_exited" from="Interaction Components/InteractArea" to="." method="_on_interact_area_area_exited"]
