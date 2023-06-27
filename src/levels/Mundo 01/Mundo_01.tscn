@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://dcxvpyffw7qjp"]
+[gd_scene load_steps=20 format=3 uid="uid://dcxvpyffw7qjp"]
 
 [ext_resource type="Texture2D" uid="uid://c18spii4aylg5" path="res://Rocky Roads/Tilesets/tileset_snow.png" id="1_ay3mo"]
 [ext_resource type="Texture2D" uid="uid://c2bbrfk677e8k" path="res://Rocky Roads/Backgrounds/mountains_a.png" id="1_i38fq"]
 [ext_resource type="Texture2D" uid="uid://c2t1f87rjv4jp" path="res://src/backgrounds/level_01/Layer01.png" id="1_n43ib"]
+[ext_resource type="Script" path="res://src/levels/Mundo 01/Mundo_01.gd" id="1_vdl8k"]
 [ext_resource type="Texture2D" uid="uid://2lwvu8jscqmn" path="res://Rocky Roads/Deco/log_wall.png" id="2_1hr80"]
 [ext_resource type="Texture2D" uid="uid://bqy0mtf1yjt7f" path="res://Rocky Roads/Backgrounds/clouds - copia.png" id="2_wlner"]
 [ext_resource type="Texture2D" uid="uid://sxfmtptoycnr" path="res://Rocky Roads/Backgrounds/Fondo cueva.png" id="2_x2fhf"]
@@ -13,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cqe1w43pij010" path="res://Rocky Roads/Objects/sign.png" id="9_a58nw"]
 [ext_resource type="Texture2D" uid="uid://cw18uvdr4vm4w" path="res://Rocky Roads/Objects/treasure_chest.png" id="10_w8r8h"]
 [ext_resource type="PackedScene" uid="uid://ch57627pm4leb" path="res://src/characters/jermaine/jermaine.tscn" id="15_bpu3u"]
-[ext_resource type="PackedScene" uid="uid://dutws786472pw" path="res://src/Enemies/espinas.tscn" id="15_ghek5"]
+[ext_resource type="PackedScene" uid="uid://cp4tcm7irfmap" path="res://src/Enemies/espinas.tscn" id="15_ghek5"]
 [ext_resource type="PackedScene" uid="uid://cc0okok6skkn" path="res://src/sprites/door/door.tscn" id="16_r6dh7"]
 [ext_resource type="PackedScene" uid="uid://bsm4ap6w33rir" path="res://src/Enemies/murcielago.tscn" id="17_2otmd"]
 
@@ -148,6 +149,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ij43r")
 
 [node name="Nivel_1" type="Node2D"]
+script = ExtResource("1_vdl8k")
 metadata/_edit_horizontal_guides_ = [-664.0]
 
 [node name="Cielo" type="Sprite2D" parent="."]
@@ -459,8 +461,60 @@ scale = Vector2(0.8, 0.8)
 position = Vector2(7, -66)
 zoom = Vector2(3, 3)
 
+[node name="Pause" type="Control" parent="Jermaine"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -261.0
+offset_top = -216.0
+offset_right = 271.0
+offset_bottom = 82.0
+
+[node name="Label" type="Label" parent="Jermaine/Pause"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.25
+offset_top = 13.5
+offset_right = 56.75
+offset_bottom = 71.5
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Pause"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Jermaine/Pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.5
+offset_top = -41.0
+offset_right = 52.5
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Continue" type="Button" parent="Jermaine/Pause/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 22
+text = "Continue"
+
+[node name="Quit" type="Button" parent="Jermaine/Pause/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Quit"
+
 [node name="Door" parent="." instance=ExtResource("16_r6dh7")]
 position = Vector2(2656, 352)
 scale = Vector2(0.5, 0.5)
 id_level = "Mundo_01"
 location = "Final"
+
+[connection signal="pressed" from="Jermaine/Pause/VBoxContainer/Continue" to="Jermaine" method="_on_continue_pressed"]
+[connection signal="pressed" from="Jermaine/Pause/VBoxContainer/Quit" to="Jermaine" method="_on_quit_pressed"]
