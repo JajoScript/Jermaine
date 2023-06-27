@@ -6,6 +6,7 @@ extends CharacterBody2D
 var axis: Vector2;
 
 var jump := -275
+var life := 3 
 const gravity := 10
 var life := 3
 
@@ -23,6 +24,10 @@ func get_axis() -> Vector2:
 func motion_ctrl() -> void:
 	velocity.x = (get_axis().x * speed);
 	# velocity.y = (get_axis().y * -(speed*2));
+	
+func damage_control( damage : int ) -> void:
+	life -= damage
+	$Camera2D/HUB/Sprite2D.frame += damage
 
 func damage_control( damage : int ) -> void:
 	life -= damage

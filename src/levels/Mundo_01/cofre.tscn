@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvwmtm13a4h2t"]
+
+[ext_resource type="Script" path="res://src/levels/Mundo_01/Cofre.gd" id="1_lawp2"]
+[ext_resource type="Texture2D" uid="uid://cw18uvdr4vm4w" path="res://Rocky Roads/Objects/treasure_chest.png" id="1_ogfe5"]
+
+[sub_resource type="Animation" id="Animation_rmom1"]
+resource_name = "open"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cofre/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_xeb5r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cofre/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5gx8x"]
+_data = {
+"RESET": SubResource("Animation_xeb5r"),
+"open": SubResource("Animation_rmom1")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ob3b"]
+size = Vector2(24, 15)
+
+[node name="Cofre" type="Node2D"]
+
+[node name="Cofre" type="Area2D" parent="."]
+script = ExtResource("1_lawp2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cofre"]
+texture = ExtResource("1_ogfe5")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cofre"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_5gx8x")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cofre"]
+position = Vector2(-2, 8.5)
+shape = SubResource("RectangleShape2D_3ob3b")
+
+[connection signal="body_entered" from="Cofre" to="Cofre" method="_on_body_entered"]
