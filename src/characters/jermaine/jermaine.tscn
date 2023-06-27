@@ -345,7 +345,7 @@ script = ExtResource("1_nkqge")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_a5a7n")
 animation = &"Damage"
-frame_progress = 0.211253
+frame_progress = 0.0375278
 centered = false
 
 [node name="Collision" type="CollisionShape2D" parent="."]

@@ -387,7 +387,7 @@ position = Vector2(3043, 1093)
 position = Vector2(2708, 1088)
 
 [node name="Dragon11" parent="." instance=ExtResource("12_8qaqd")]
-position = Vector2(2188, 1185)
+position = Vector2(1957, 1206)
 
 [node name="Dragon6" parent="." instance=ExtResource("12_8qaqd")]
 position = Vector2(1070, 228)
