@@ -14,7 +14,7 @@ func ser_dañado ( daño : int ) -> void :
 func changelifebar () -> void :
 	life.frame += 1
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	direccion = Input.get_axis("move_left","move_right")
 	velocity.x = direccion * speed
 	

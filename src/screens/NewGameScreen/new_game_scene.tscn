@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://d20r2u0ggpfy1"]
+
+[ext_resource type="FontFile" uid="uid://o5gd3od23k32" path="res://src/assets/fonts/PressStart2P-Regular.ttf" id="1_fjawb"]
+[ext_resource type="Script" path="res://src/screens/NewGameScreen/new_game_scene.gd" id="1_yc6vl"]
+
+[node name="NewGameScene" type="Node2D"]
+script = ExtResource("1_yc6vl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.0705882, 0.0117647, 0.0352941, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fjawb")
+text = "Iniciando una nueva partida..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

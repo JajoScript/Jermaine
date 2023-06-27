@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5fatyexewycm"]
+
+[ext_resource type="FontFile" uid="uid://uq4ct6eliiya" path="res://src/fonts/Kenney High Square.ttf" id="1_2viin"]
+[ext_resource type="Texture2D" uid="uid://duw0ob4kanre7" path="res://src/backgrounds/nature-landscape-pixel-art-pixelated-pixels-hd-wallpaper-preview (1).jpg" id="1_inoeh"]
+[ext_resource type="Texture2D" uid="uid://dw4htm04sqdpd" path="res://src/assets/image-removebg-preview (11) (1).png" id="2_xjrec"]
+
+[sub_resource type="GDScript" id="GDScript_51gbu"]
+script/source = "extends PanelContainer
+
+
+func _on_boton_jugar_pressed():
+	get_tree().change_scene_to_file(\"res://src/levels/Mundo_01.tscn\")
+
+
+func _on_boton_salir_pressed():
+	get_tree().quit()
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvh2y"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="pantallaTitulo" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_51gbu")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_inoeh")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_xjrec")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="botones" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="botonJugar" type="Button" parent="botones"]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("1_2viin")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvh2y")
+text = "Nueva Partida"
+
+[node name="botonSalir" type="Button" parent="botones"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2viin")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvh2y")
+text = "Salir
+"
+
+[connection signal="pressed" from="botones/botonJugar" to="." method="_on_boton_jugar_pressed"]
+[connection signal="pressed" from="botones/botonSalir" to="." method="_on_boton_salir_pressed"]
