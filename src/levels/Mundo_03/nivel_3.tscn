@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://dl1by7m853k7h"]
+[gd_scene load_steps=17 format=3 uid="uid://dl1by7m853k7h"]
 
 [ext_resource type="Texture2D" uid="uid://celw2sy8nuf32" path="res://Rocky Roads/Objects/sign_arrow.png" id="1_crfnf"]
 [ext_resource type="Texture2D" uid="uid://cetak28o5sjn0" path="res://src/levels/Nivel3/fondo mina.png" id="1_csve7"]
 [ext_resource type="Texture2D" uid="uid://bu2be7umwaggq" path="res://src/levels/tileset_snow.png" id="1_k5bpv"]
 [ext_resource type="PackedScene" uid="uid://wgix62dd30y7" path="res://orca.tscn" id="2_anor8"]
 [ext_resource type="PackedScene" uid="uid://cc0okok6skkn" path="res://src/sprites/door/door.tscn" id="2_q4rh8"]
-[ext_resource type="PackedScene" uid="uid://cdevv4k58nbgh" path="res://dragon.tscn" id="3_l0gbr"]
 [ext_resource type="PackedScene" uid="uid://ch57627pm4leb" path="res://src/characters/jermaine/jermaine.tscn" id="5_x3r2l"]
 [ext_resource type="Texture2D" uid="uid://bk2gwgx0es5p0" path="res://src/assets/objects/image-removebg-preview (11) (1).png" id="7_6122a"]
 [ext_resource type="Texture2D" uid="uid://bgqw5akp55qfv" path="res://src/assets/objects/lapida.png" id="8_2ekvg"]
@@ -356,16 +355,13 @@ position = Vector2(1572, 604)
 [node name="orca4" parent="." instance=ExtResource("2_anor8")]
 position = Vector2(2811, 780)
 
-[node name="dragontierra" parent="." instance=ExtResource("3_l0gbr")]
-position = Vector2(1115, 100)
-
 [node name="Snowman" parent="." instance=ExtResource("12_aq45o")]
 position = Vector2(130, 189)
 rotation = 3.14159
 scale = Vector2(1, -1)
 
 [node name="Jermaine" parent="." instance=ExtResource("5_x3r2l")]
-position = Vector2(75, 164)
+position = Vector2(76, 164)
 
 [node name="Camera2D" type="Camera2D" parent="Jermaine"]
 zoom = Vector2(3, 3)
@@ -394,7 +390,7 @@ position = Vector2(2708, 1088)
 position = Vector2(2188, 1185)
 
 [node name="Dragon6" parent="." instance=ExtResource("12_8qaqd")]
-position = Vector2(1071, 228)
+position = Vector2(1070, 228)
 
 [node name="Dragon2" parent="." instance=ExtResource("12_8qaqd")]
 position = Vector2(1581, 234)

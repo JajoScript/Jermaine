@@ -38,8 +38,14 @@ func move_animation() -> void:
 	elif (velocity.y != 0):
 		$Sprite.play("Double jump");
 		$Sprite.flip_h = (velocity.x < 0)
+		
 	else:
 		$Sprite.play("Idle")
+		
+	if ($Sprite.flip_h):
+		$Sprite.offset.x = -20
+	else:
+		$Sprite.offset.x = 0
 
 func _input(_event):
 	if Input.is_action_just_pressed("menu") and get_tree().paused == false:
