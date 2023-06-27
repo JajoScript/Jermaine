@@ -1101,13 +1101,14 @@ position = Vector2(558, 203)
 scale = Vector2(4, 4)
 
 [node name="Jermaine" parent="." instance=ExtResource("2_r6m5f")]
-position = Vector2(176, 222)
+position = Vector2(179, 201)
 scale = Vector2(0.9, 0.9)
 
 [node name="Camera2D" type="Camera2D" parent="Jermaine"]
-position = Vector2(0, -80)
+position = Vector2(14.4444, -46.6667)
 zoom = Vector2(3, 3)
 
 [node name="HUB" parent="Jermaine/Camera2D" instance=ExtResource("9_jxvuu")]
+visible = false
 scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)

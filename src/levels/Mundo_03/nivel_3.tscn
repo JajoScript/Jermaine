@@ -12,9 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://br1mr1k55kopj" path="res://src/assets/objects/palocraneo.png" id="9_88ank"]
 [ext_resource type="Texture2D" uid="uid://cbij37kqdnepg" path="res://src/assets/objects/cartelmuerte.png" id="10_t7vqg"]
 [ext_resource type="Texture2D" uid="uid://bnqihu14rdj32" path="res://src/assets/objects/jaula.png" id="11_j63xx"]
-[ext_resource type="PackedScene" uid="uid://buyprgdyxhljr" path="res://src/enemies/dragon.tscn" id="12_8qaqd"]
+[ext_resource type="PackedScene" uid="uid://buyprgdyxhljr" path="res://src/Enemies/dragon.tscn" id="12_8qaqd"]
 [ext_resource type="PackedScene" uid="uid://cw6p6dlc7ohy1" path="res://src/sprites/Snowman/snowman.tscn" id="12_aq45o"]
-[ext_resource type="PackedScene" uid="uid://4senjo5c3eb0" path="res://src/enemies/hub.tscn" id="13_2uu7j"]
+[ext_resource type="PackedScene" uid="uid://4senjo5c3eb0" path="res://src/Enemies/hub.tscn" id="13_2uu7j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hek64"]
 texture = ExtResource("1_k5bpv")
@@ -365,7 +365,7 @@ rotation = 3.14159
 scale = Vector2(1, -1)
 
 [node name="Jermaine" parent="." instance=ExtResource("5_x3r2l")]
-position = Vector2(85, 188)
+position = Vector2(75, 164)
 
 [node name="Camera2D" type="Camera2D" parent="Jermaine"]
 zoom = Vector2(3, 3)

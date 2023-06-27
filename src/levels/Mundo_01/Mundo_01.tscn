@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dcxvpyffw7qjp"]
+[gd_scene load_steps=19 format=3 uid="uid://dcxvpyffw7qjp"]
 
 [ext_resource type="Texture2D" uid="uid://c18spii4aylg5" path="res://Rocky Roads/Tilesets/tileset_snow.png" id="1_ay3mo"]
 [ext_resource type="Texture2D" uid="uid://c2bbrfk677e8k" path="res://Rocky Roads/Backgrounds/mountains_a.png" id="1_i38fq"]

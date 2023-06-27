@@ -343,13 +343,12 @@ expand_margin_bottom = 5.0
 script = ExtResource("1_nkqge")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(-10, -23)
 sprite_frames = SubResource("SpriteFrames_a5a7n")
 animation = &"Idle"
 centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(11, 26)
 shape = SubResource("RectangleShape2D_fp6jq")
 
 [node name="Interaction Components" type="Node2D" parent="."]

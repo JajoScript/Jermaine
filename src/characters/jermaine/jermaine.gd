@@ -8,10 +8,10 @@ var axis: Vector2;
 var jump := -275
 var life := 3 
 const gravity := 10
-var life := 3
 
 @onready var all_interactions = [];
 @onready var interactLabel = $"Interaction Components/IntereactLabel"
+@onready var collision = $"Collision"
 
 # Metodos.
 func get_axis() -> Vector2:
@@ -29,15 +29,11 @@ func damage_control( damage : int ) -> void:
 	life -= damage
 	$Camera2D/HUB/Sprite2D.frame += damage
 
-func damage_control( damage : int ) -> void:
-	life -= damage
-	$Camera2D/HUB/Sprite2D.frame += damage
 
 func move_animation() -> void:
 	if (velocity.x != 0 and velocity.y == 0):
 		$Sprite.play("Run")
-		$Sprite.flip_h = (velocity.x < 0);
-		# $CollisionShape2D.flip_h = (velocity.x < 0);
+		$Sprite.flip_h = (velocity.x < 0)
 		
 	elif (velocity.y != 0):
 		$Sprite.play("Double jump");
