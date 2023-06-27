@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dcxvpyffw7qjp"]
+[gd_scene load_steps=19 format=3 uid="uid://dcxvpyffw7qjp"]
 
 [ext_resource type="Texture2D" uid="uid://c18spii4aylg5" path="res://Rocky Roads/Tilesets/tileset_snow.png" id="1_ay3mo"]
 [ext_resource type="Texture2D" uid="uid://c2bbrfk677e8k" path="res://Rocky Roads/Backgrounds/mountains_a.png" id="1_i38fq"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cw18uvdr4vm4w" path="res://Rocky Roads/Objects/treasure_chest.png" id="10_w8r8h"]
 [ext_resource type="PackedScene" uid="uid://ch57627pm4leb" path="res://src/characters/jermaine/jermaine.tscn" id="15_bpu3u"]
 [ext_resource type="PackedScene" uid="uid://dutws786472pw" path="res://src/Enemies/espinas.tscn" id="15_ghek5"]
+[ext_resource type="PackedScene" uid="uid://cc0okok6skkn" path="res://src/sprites/door/door.tscn" id="16_r6dh7"]
 [ext_resource type="PackedScene" uid="uid://bsm4ap6w33rir" path="res://src/Enemies/murcielago.tscn" id="17_2otmd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ij43r"]
@@ -451,9 +452,15 @@ position = Vector2(2268, -233)
 position = Vector2(2265, -452)
 
 [node name="Jermaine" parent="." instance=ExtResource("15_bpu3u")]
-position = Vector2(87, 161)
+position = Vector2(64, 160)
 scale = Vector2(0.8, 0.8)
 
 [node name="Camera2D" type="Camera2D" parent="Jermaine"]
 position = Vector2(7, -66)
 zoom = Vector2(3, 3)
+
+[node name="Door" parent="." instance=ExtResource("16_r6dh7")]
+position = Vector2(2656, 352)
+scale = Vector2(0.5, 0.5)
+id_level = "Mundo_01"
+location = "Final"

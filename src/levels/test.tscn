@@ -62,7 +62,8 @@ scale = Vector2(0.9, 0.9)
 
 [node name="Carrito" parent="." instance=ExtResource("5_2iys4")]
 z_index = 1
-position = Vector2(75, 250)
+position = Vector2(80, 261)
+scale = Vector2(4.7, 4.7)
 
 [node name="InteractArea" parent="." instance=ExtResource("6_cclae")]
 position = Vector2(110, 285)
@@ -72,7 +73,7 @@ interact_type = "print_text"
 interact_value = "El carrito ya no tiene chucrut"
 
 [node name="Gonzalin" parent="." instance=ExtResource("7_53t5q")]
-position = Vector2(98, 281)
+position = Vector2(96, 281)
 scale = Vector2(1.16, 1.16)
 
 [node name="Camera2D" type="Camera2D" parent="."]

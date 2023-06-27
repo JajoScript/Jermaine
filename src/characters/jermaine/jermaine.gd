@@ -9,7 +9,8 @@ var jump := -270
 const gravity := 10
 
 @onready var all_interactions = [];
-@onready var interactLabel = $"Interaction Components/IntereactLabel"
+@onready var interactPanel = $"Interaction Components/IntereactPanel"
+@onready var interactLabel = $"Interaction Components/IntereactPanel/IntereactLabel"
 
 # Metodos.
 func get_axis() -> Vector2:
@@ -55,6 +56,7 @@ func _physics_process(_delta):
 func _process(_delta):
 	# Animaciones
 	$Sprite.play()
+	$"Interaction Components/KeySprite".play()
 	
 	# Control del jugador.
 	motion_ctrl();
@@ -71,10 +73,14 @@ func _on_interact_area_area_exited(area):
 	update_interaction()
 
 func update_interaction():
+	# Mostrar u ocultar el botón de interacción
 	if all_interactions:
-		interactLabel.text = all_interactions[0].interact_label
+		$"Interaction Components/KeySprite".visible = true;
 	else:
+		$"Interaction Components/KeySprite".visible = false;
+		interactPanel.visible = false;
 		interactLabel.text = ""
+		
 
 func execute_interaction():
 	if all_interactions:
@@ -82,5 +88,6 @@ func execute_interaction():
 		
 		match cur_interaction.interact_type:
 			"print_text":
-				print(cur_interaction.interact_value)
+				$"Interaction Components/KeySprite".visible = false;
+				interactPanel.visible = true;
 				interactLabel.text = cur_interaction.interact_value

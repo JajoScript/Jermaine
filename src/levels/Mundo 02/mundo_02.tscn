@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlqyfq6pidt4s"]
+[gd_scene load_steps=11 format=3 uid="uid://dlqyfq6pidt4s"]
 
 [ext_resource type="Script" path="res://src/levels/Mundo 02/mundo_02.gd" id="1_wye5m"]
 [ext_resource type="PackedScene" uid="uid://ch57627pm4leb" path="res://src/characters/jermaine/jermaine.tscn" id="2_r6m5f"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://oy8mhutq330i" path="res://src/sprites/Kapedrin/kapedrin.tscn" id="4_fkjut"]
 [ext_resource type="Texture2D" uid="uid://bitv0okpid4v7" path="res://src/backgrounds/level_02/1.png" id="4_vk3yg"]
 [ext_resource type="PackedScene" uid="uid://civdfjvser5ok" path="res://src/gui/gui/gui.tscn" id="7_p6nim"]
+[ext_resource type="PackedScene" uid="uid://cc0okok6skkn" path="res://src/sprites/door/door.tscn" id="8_j75t8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y1vx5"]
 texture = ExtResource("3_fj2ad")
@@ -1001,8 +1002,15 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(983039, 851968, 17, 851967, 851968, 15, 327679, 65536, 13, 262150, 983040, 10, 262151, 1048576, 10, 327687, 1048576, 11, 262152, 1114112, 10, 262153, 1114112, 10, 327689, 1114112, 11, 262144, 720896, 10, 327680, 720896, 11, 262145, 786432, 10, 327681, 786432, 11, 262146, 458752, 11, 327682, 851968, 11, 262147, 655360, 10, 327683, 655360, 11, 393215, 65536, 14, 262148, 720896, 10, 262149, 917504, 10, 327685, 917504, 11, 327684, 458752, 11, 327688, 1114112, 11, 393217, 1048576, 11, 917504, 851968, 16, 851971, 983040, 12, 917507, 983040, 13, 851972, 1048576, 12, 917508, 1048576, 13, 327686, 983040, 11)
 
+[node name="Door" parent="." instance=ExtResource("8_j75t8")]
+position = Vector2(99, 190)
+scale = Vector2(0.4, 0.4)
+is_open = false
+id_level = "Mundo_02"
+location = "Comienzo"
+
 [node name="Jermaine" parent="." instance=ExtResource("2_r6m5f")]
-position = Vector2(250, 226)
+position = Vector2(176, 222)
 scale = Vector2(0.9, 0.9)
 
 [node name="Kapedrin" parent="." instance=ExtResource("4_fkjut")]
