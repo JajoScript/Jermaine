@@ -24,21 +24,21 @@ func change_level():
 	if (id_level == "Mundo_01"):
 		if (location == "Comienzo"):
 			print("Debo cambiar la Mundo_01")
-		else:
+		elif (location == "Final"):
 			print("Debo cambiar la Mundo_02")
 			get_tree().change_scene_to_file("res://src/levels/Mundo 02/mundo_02.tscn")
 		
 	elif (id_level == "Mundo_02"):
 		if (location == "Comienzo"):
 			print("Debo cambiar la Mundo_01")
-		else:
+		elif (location == "Final"):
 			print("Debo cambiar la Mundo_03")
-		
-	else:
-		print("Aweonao te equivocaste de id")
+			get_tree().change_scene_to_file("res://src/levels/Mundo_03/nivel_3.tscn")
 
 
 func _on_area_2d_body_entered(_body):
-	#if (is_open && location == "Final"):
+	if (_body.name != "Jermaine" && _body.name != "TestCharacter"):
+		return
+	
 	if (is_open && location == "Final"):
 		change_level()

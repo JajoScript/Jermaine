@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dcxvpyffw7qjp"]
+[gd_scene load_steps=20 format=3 uid="uid://dcxvpyffw7qjp"]
 
 [ext_resource type="Texture2D" uid="uid://c18spii4aylg5" path="res://Rocky Roads/Tilesets/tileset_snow.png" id="1_ay3mo"]
 [ext_resource type="Texture2D" uid="uid://c2bbrfk677e8k" path="res://Rocky Roads/Backgrounds/mountains_a.png" id="1_i38fq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bqy0mtf1yjt7f" path="res://Rocky Roads/Backgrounds/clouds - copia.png" id="2_wlner"]
 [ext_resource type="Texture2D" uid="uid://sxfmtptoycnr" path="res://Rocky Roads/Backgrounds/Fondo cueva.png" id="2_x2fhf"]
 [ext_resource type="Texture2D" uid="uid://ew4f1bg2gac1" path="res://Rocky Roads/Deco/tree_b.png" id="3_ndyh6"]
+[ext_resource type="PackedScene" uid="uid://cc0okok6skkn" path="res://src/sprites/door/door.tscn" id="5_l2sis"]
 [ext_resource type="Texture2D" uid="uid://besud1mk5o3vd" path="res://Rocky Roads/Deco/clouds.png" id="6_msqcm"]
 [ext_resource type="Texture2D" uid="uid://ceqhmpyecmt2l" path="res://Rocky Roads/Deco/rock.png" id="7_181a1"]
 [ext_resource type="Texture2D" uid="uid://celw2sy8nuf32" path="res://Rocky Roads/Objects/sign_arrow.png" id="8_iogu5"]
@@ -195,6 +196,12 @@ texture = ExtResource("2_x2fhf")
 position = Vector2(2476.5, -349)
 scale = Vector2(7.4125, 6.325)
 texture = ExtResource("2_x2fhf")
+
+[node name="Door" parent="." instance=ExtResource("5_l2sis")]
+position = Vector2(2628, 327)
+scale = Vector2(0.7, 0.7)
+id_level = "Mundo_01"
+location = "Final"
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(35, -49)
@@ -449,7 +456,7 @@ position = Vector2(2268, -233)
 position = Vector2(2265, -452)
 
 [node name="TestCharacter" parent="." instance=ExtResource("15_g7750")]
-position = Vector2(85, 92)
+position = Vector2(2590, 357)
 
 [node name="Dragon" parent="." instance=ExtResource("16_cxkjj")]
 position = Vector2(225, -3)

@@ -48,6 +48,8 @@ func _input(_event):
 # Procesos.
 func _ready():
 	interactLabel.visible = false;
+
+
 func _physics_process(_delta):
 	# Interacción
 	if Input.is_action_just_pressed("interact"):
@@ -71,6 +73,7 @@ func _process(_delta):
 	motion_ctrl();
 	if life <= 0:
 		queue_free()
+		get_tree().change_scene_to_file("res://src/screens/DeathScreen/death_screen.tscn")
 	move_animation();
 
 
@@ -102,19 +105,3 @@ func execute_interaction():
 				$"Interaction Components/KeySprite".visible = false;
 				interactLabel.visible = true;
 				interactLabel.text = cur_interaction.interact_value
-
-
-func _on_pause_pressed():
-	pass # Replace with function body.
-
-
-func _on_continue_pressed():
-	$Pause.visible = false
-	get_tree().paused = false
-	pass # Replace with function body.
-
-
-func _on_quit_pressed():
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://src/screens/MainScreen/main.tscn")
-	pass # Replace with function body.
