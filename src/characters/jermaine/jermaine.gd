@@ -35,6 +35,11 @@ func move_animation() -> void:
 	else:
 		$Sprite.play("Idle")
 
+func _input(event):
+	if Input.is_action_just_pressed("menu") and get_tree().paused == false:
+		get_tree().paused = true
+	#	$Pause.visible = true
+
 # Procesos.
 func _ready():
 	interactLabel.visible = false;
@@ -91,3 +96,18 @@ func execute_interaction():
 				interactLabel.visible = true;
 				interactLabel.text = cur_interaction.interact_value
 
+
+func _on_pause_pressed():
+	pass # Replace with function body.
+
+
+func _on_continue_pressed():
+	$Pause.visible = false
+	get_tree().paused = false
+	pass # Replace with function body.
+
+
+func _on_quit_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://src/screens/MainScreen/main.tscn")
+	pass # Replace with function body.
