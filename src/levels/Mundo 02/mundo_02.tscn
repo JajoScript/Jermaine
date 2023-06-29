@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://drio5n747sfk2" path="res://src/tiles/exclusion_zone/Tileset.png" id="3_fj2ad"]
 [ext_resource type="Texture2D" uid="uid://bitv0okpid4v7" path="res://src/backgrounds/level_02/1.png" id="4_vk3yg"]
 [ext_resource type="PackedScene" uid="uid://c4q2qrkbdh1kc" path="res://src/sprites/Arboles/arbol_rojo_01/arbol_01.tscn" id="5_1xwb4"]
-[ext_resource type="PackedScene" uid="uid://bco8v1fn64f61" path="res://src/sprites/Carrito_completos/carrito.tscn" id="5_4i2uk"]
+[ext_resource type="PackedScene" uid="uid://bco8v1fn64f61" path="res://src/sprites/carrito_completos/carrito.tscn" id="5_4i2uk"]
 [ext_resource type="PackedScene" uid="uid://cu00ljd4jb6y1" path="res://src/sprites/Arboles/arbol_rojo_02/arbol_rojo_02.tscn" id="6_4skjt"]
 [ext_resource type="PackedScene" uid="uid://i8r4ijlaxq28" path="res://src/sprites/Chancho/chancho.tscn" id="6_lhdfy"]
 [ext_resource type="PackedScene" uid="uid://b75hvqgxqktrh" path="res://src/sprites/Gonzalin/gonzalin.tscn" id="7_tuohb"]
@@ -1113,25 +1113,34 @@ zoom = Vector2(3, 3)
 [node name="HUB" parent="Jermaine/Camera2D" instance=ExtResource("9_jxvuu")]
 
 [node name="Dragon" parent="." instance=ExtResource("13_326rj")]
-position = Vector2(1120, 13)
+position = Vector2(50, -217)
 
 [node name="Dragon2" parent="." instance=ExtResource("13_326rj")]
-position = Vector2(1103, -141)
+position = Vector2(708, -747)
 
 [node name="Dragon3" parent="." instance=ExtResource("13_326rj")]
-position = Vector2(951, -65)
+position = Vector2(943, 31)
 
 [node name="Dragon4" parent="." instance=ExtResource("13_326rj")]
 position = Vector2(468, -6)
 
-[node name="Dragon5" parent="." instance=ExtResource("13_326rj")]
-position = Vector2(348, -129)
-
 [node name="DT" parent="." instance=ExtResource("14_3ng66")]
-position = Vector2(928, 220)
+position = Vector2(931, 220)
 
 [node name="DT2" parent="." instance=ExtResource("14_3ng66")]
 position = Vector2(737, 42)
 
-[node name="DT3" parent="." instance=ExtResource("14_3ng66")]
-position = Vector2(737, 42)
+[node name="DT4" parent="." instance=ExtResource("14_3ng66")]
+position = Vector2(1289, -276)
+
+[node name="DT5" parent="." instance=ExtResource("14_3ng66")]
+position = Vector2(1241, -453)
+
+[node name="DT8" parent="." instance=ExtResource("14_3ng66")]
+position = Vector2(1042, -389)
+
+[node name="DT6" parent="." instance=ExtResource("14_3ng66")]
+position = Vector2(337, -212)
+
+[node name="DT7" parent="." instance=ExtResource("14_3ng66")]
+position = Vector2(651, -198)
