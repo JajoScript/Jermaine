@@ -1,7 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmrw78hbn8ybi"]
+[gd_scene load_steps=8 format=3 uid="uid://d0itcolg72ccb"]
 
-[ext_resource type="Script" path="res://src/sprites/Dragon/dragonTierra.gd" id="1_po3b4"]
-[ext_resource type="Texture2D" uid="uid://hn4q5c258cq8" path="res://src/characters/dinosaruioTierra/walk.png" id="2_nlbt4"]
+[ext_resource type="Texture2D" uid="uid://hn4q5c258cq8" path="res://src/sprites/DinosaruioTierra/walk.png" id="2_ppf73"]
+
+[sub_resource type="GDScript" id="GDScript_m6c5g"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$AnimationPlayer.play(\"walking\")
+
+func _on_body_entered(body):
+	if body.name == \"Jermaine\" :
+		body.damage_control(1)
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxldq"]
 size = Vector2(24, 27)
@@ -123,11 +135,11 @@ _data = {
 [node name="Node2D" type="Node2D"]
 
 [node name="DT" type="Area2D" parent="."]
-script = ExtResource("1_po3b4")
+script = SubResource("GDScript_m6c5g")
 
 [node name="Sprite2D" type="Sprite2D" parent="DT"]
 position = Vector2(-131, 0)
-texture = ExtResource("2_nlbt4")
+texture = ExtResource("2_ppf73")
 flip_h = true
 hframes = 7
 frame = 1

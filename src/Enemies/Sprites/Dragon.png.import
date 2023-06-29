@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lpexiic87rfk"
-path="res://.godot/imported/Dragon.png-6c2758f17028203c0d03be6b533abbe9.ctex"
+path="res://.godot/imported/Dragon.png-dfbc117ad81dad033d5cd01e4f1ac83a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/enemies/Sprites/Dragon.png"
-dest_files=["res://.godot/imported/Dragon.png-6c2758f17028203c0d03be6b533abbe9.ctex"]
+source_file="res://src/Enemies/Sprites/Dragon.png"
+dest_files=["res://.godot/imported/Dragon.png-dfbc117ad81dad033d5cd01e4f1ac83a.ctex"]
 
 [params]
 

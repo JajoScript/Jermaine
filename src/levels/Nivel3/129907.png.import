@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6ebtpi0cv7u7"
-path="res://.godot/imported/gonzalin_idle.png-19dfefce51509b34c758ac39ada44a51.ctex"
+uid="uid://dvx32nx1vbuva"
+path="res://.godot/imported/129907.png-56c375536def64d89a6a1c2383bf9d29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/sprites/Gonzalin/gonzalin_idle.png"
-dest_files=["res://.godot/imported/gonzalin_idle.png-19dfefce51509b34c758ac39ada44a51.ctex"]
+source_file="res://src/levels/Nivel3/129907.png"
+dest_files=["res://.godot/imported/129907.png-56c375536def64d89a6a1c2383bf9d29.ctex"]
 
 [params]
 

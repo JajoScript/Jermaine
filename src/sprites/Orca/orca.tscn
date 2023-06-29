@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c3b78d2kdnkd7"]
 
-[ext_resource type="Script" path="res://orca.gd" id="1_prvx2"]
+[ext_resource type="Script" path="res://src/sprites/Orca/orcas.gd" id="1_61mcq"]
 [ext_resource type="Texture2D" uid="uid://sqajeqhi2sbq" path="res://src/sprites/Orca/31743.png" id="1_rnxdi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d8tuy"]
@@ -119,7 +119,7 @@ _data = {
 [node name="orca" type="Node2D"]
 
 [node name="orca" type="Area2D" parent="."]
-script = ExtResource("1_prvx2")
+script = ExtResource("1_61mcq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="orca"]
 position = Vector2(-111, 0)

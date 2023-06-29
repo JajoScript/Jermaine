@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0g25s130255m"
-path="res://.godot/imported/carrito.png-4d56b7498743127cd8eff5c647d0f7c8.ctex"
+path="res://.godot/imported/carrito.png-a0369c170f09a72f21ae42ced501e70b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/sprites/carrito_completos/carrito.png"
-dest_files=["res://.godot/imported/carrito.png-4d56b7498743127cd8eff5c647d0f7c8.ctex"]
+source_file="res://src/sprites/Carrito_completos/carrito.png"
+dest_files=["res://.godot/imported/carrito.png-a0369c170f09a72f21ae42ced501e70b.ctex"]
 
 [params]
 
