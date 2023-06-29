@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dcxvpyffw7qjp"]
+[gd_scene load_steps=27 format=3 uid="uid://dcxvpyffw7qjp"]
 
 [ext_resource type="Texture2D" uid="uid://c18spii4aylg5" path="res://src/tiles/Rocky Roads/Tilesets/tileset_snow.png" id="1_ay3mo"]
 [ext_resource type="Texture2D" uid="uid://c2bbrfk677e8k" path="res://src/tiles/Rocky Roads/Backgrounds/mountains_a.png" id="1_i38fq"]
@@ -7,17 +7,20 @@
 [ext_resource type="Texture2D" uid="uid://bqy0mtf1yjt7f" path="res://src/tiles/Rocky Roads/Backgrounds/clouds - copia.png" id="2_wlner"]
 [ext_resource type="Texture2D" uid="uid://sxfmtptoycnr" path="res://src/tiles/Rocky Roads/Backgrounds/Fondo cueva.png" id="2_x2fhf"]
 [ext_resource type="Texture2D" uid="uid://ew4f1bg2gac1" path="res://src/tiles/Rocky Roads/Deco/tree_b.png" id="3_ndyh6"]
-[ext_resource type="PackedScene" uid="uid://cc0okok6skkn" path="res://src/sprites/Door/door.tscn" id="5_l2sis"]
+[ext_resource type="PackedScene" uid="uid://cc0okok6skkn" path="res://src/sprites/door/door.tscn" id="5_l2sis"]
 [ext_resource type="Texture2D" uid="uid://besud1mk5o3vd" path="res://src/tiles/Rocky Roads/Deco/clouds.png" id="6_msqcm"]
 [ext_resource type="PackedScene" uid="uid://tkrvhe3fysjn" path="res://src/sprites/Perro_01/perro.tscn" id="7_1adq0"]
 [ext_resource type="Texture2D" uid="uid://ceqhmpyecmt2l" path="res://src/tiles/Rocky Roads/Deco/rock.png" id="7_181a1"]
 [ext_resource type="Texture2D" uid="uid://celw2sy8nuf32" path="res://src/tiles/Rocky Roads/Objects/sign_arrow.png" id="8_iogu5"]
 [ext_resource type="Texture2D" uid="uid://cqe1w43pij010" path="res://src/tiles/Rocky Roads/Objects/sign.png" id="9_a58nw"]
 [ext_resource type="Texture2D" uid="uid://cw18uvdr4vm4w" path="res://src/tiles/Rocky Roads/Objects/treasure_chest.png" id="10_w8r8h"]
-[ext_resource type="PackedScene" uid="uid://cp4tcm7irfmap" path="res://src/Enemies/espinas.tscn" id="15_ghek5"]
-[ext_resource type="PackedScene" uid="uid://buyprgdyxhljr" path="res://src/Enemies/dragon.tscn" id="16_cxkjj"]
-[ext_resource type="PackedScene" uid="uid://ch57627pm4leb" path="res://src/sprites/Jermaine/jermaine.tscn" id="16_is81t"]
-[ext_resource type="PackedScene" uid="uid://4senjo5c3eb0" path="res://src/Enemies/hub.tscn" id="17_2al8q"]
+[ext_resource type="PackedScene" uid="uid://cp4tcm7irfmap" path="res://src/enemies/espinas.tscn" id="15_ghek5"]
+[ext_resource type="PackedScene" uid="uid://buyprgdyxhljr" path="res://src/enemies/dragon.tscn" id="16_cxkjj"]
+[ext_resource type="PackedScene" uid="uid://ch57627pm4leb" path="res://src/characters/jermaine/jermaine.tscn" id="16_is81t"]
+[ext_resource type="PackedScene" uid="uid://4senjo5c3eb0" path="res://src/enemies/hub.tscn" id="17_2al8q"]
+[ext_resource type="Script" path="res://src/sprites/Perro_01/Perroquieto.gd" id="19_lughx"]
+[ext_resource type="Texture2D" uid="uid://cwbr3yr6ppwd2" path="res://src/sprites/Perro_01/Idle.png" id="20_grpps"]
+[ext_resource type="PackedScene" uid="uid://25xwc7l8ny1h" path="res://src/game components/Dialogos/dialogos.tscn" id="21_4fbor"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ij43r"]
 resource_name = "Montaña"
@@ -149,6 +152,44 @@ texture = ExtResource("1_ay3mo")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ij43r")
 
+[sub_resource type="Animation" id="Animation_sks73"]
+resource_name = "idle"
+length = 0.39
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_uohnq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tlbin"]
+_data = {
+"RESET": SubResource("Animation_uohnq"),
+"idle": SubResource("Animation_sks73")
+}
+
 [node name="Nivel_1" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [-664.0]
 
@@ -214,7 +255,7 @@ layer_0/tile_data = PackedInt32Array(851978, 131072, 1, 851979, 196608, 1, 85198
 position = Vector2(107, -41)
 
 [node name="Perro" parent="Assets" instance=ExtResource("7_1adq0")]
-position = Vector2(202, 185)
+position = Vector2(205, 186)
 scale = Vector2(0.6, 0.6)
 
 [node name="Tronco" type="Sprite2D" parent="."]
@@ -473,3 +514,24 @@ position = Vector2(11, -40)
 zoom = Vector2(3, 3)
 
 [node name="HUB" parent="Jermaine/Camera2D" instance=ExtResource("17_2al8q")]
+
+[node name="Perroquieto" type="Node2D" parent="."]
+position = Vector2(254, 100)
+scale = Vector2(0.7, 0.7)
+script = ExtResource("19_lughx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Perroquieto"]
+position = Vector2(25, 38)
+texture = ExtResource("20_grpps")
+hframes = 4
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Perroquieto"]
+libraries = {
+"": SubResource("AnimationLibrary_tlbin")
+}
+
+[node name="Dialogos" parent="Perroquieto" instance=ExtResource("21_4fbor")]
+position = Vector2(-30, 7.14285)
+scale = Vector2(0.5, 0.5)
+dialogList = ["somos perros bravos", "mi amigo no para de chocar", "Hola soy un doberman"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://m2we1jhn6ti7"]
+[gd_scene load_steps=24 format=3 uid="uid://m2we1jhn6ti7"]
 
 [ext_resource type="Texture2D" uid="uid://celw2sy8nuf32" path="res://src/tiles/Rocky Roads/Objects/sign_arrow.png" id="1_crfnf"]
 [ext_resource type="Texture2D" uid="uid://cetak28o5sjn0" path="res://src/levels/Nivel3/fondo mina.png" id="1_csve7"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://buyprgdyxhljr" path="res://src/enemies/dragon.tscn" id="12_8qaqd"]
 [ext_resource type="PackedScene" uid="uid://cw6p6dlc7ohy1" path="res://src/sprites/Snowman/snowman.tscn" id="12_aq45o"]
 [ext_resource type="PackedScene" uid="uid://4senjo5c3eb0" path="res://src/enemies/hub.tscn" id="13_2uu7j"]
+[ext_resource type="Script" path="res://src/sprites/HombreArmadura/Area2D.gd" id="15_gbpai"]
+[ext_resource type="Texture2D" uid="uid://c0o71vj173gws" path="res://src/levels/Nivel3/armadura.png" id="16_638sp"]
+[ext_resource type="PackedScene" uid="uid://25xwc7l8ny1h" path="res://src/game components/Dialogos/dialogos.tscn" id="17_066vy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hek64"]
 texture = ExtResource("1_k5bpv")
@@ -128,6 +131,47 @@ texture = ExtResource("1_k5bpv")
 [sub_resource type="TileSet" id="TileSet_i1mpa"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hek64")
+
+[sub_resource type="Animation" id="Animation_vppw5"]
+resource_name = "stand"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_46aup"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ya1s"]
+_data = {
+"RESET": SubResource("Animation_46aup"),
+"stand": SubResource("Animation_vppw5")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akwue"]
+size = Vector2(10, 15)
 
 [node name="Nivel2" type="Node2D"]
 
@@ -403,3 +447,29 @@ position = Vector2(2290, -86)
 
 [node name="Dragon4" parent="." instance=ExtResource("12_8qaqd")]
 position = Vector2(2877, 668)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(415, 221)
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+script = ExtResource("15_gbpai")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Area2D"]
+libraries = {
+"": SubResource("AnimationLibrary_8ya1s")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+position = Vector2(163, -34.5)
+shape = SubResource("RectangleShape2D_akwue")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Area2D"]
+position = Vector2(164, -36)
+texture = ExtResource("16_638sp")
+hframes = 3
+frame = 1
+
+[node name="Dialogos" parent="Node2D" instance=ExtResource("17_066vy")]
+position = Vector2(127, -77)
+scale = Vector2(0.4, 0.4)
+dialogList = ["Bienvenido a la super cueva", "Muchos debiles han muerto aquí"]
