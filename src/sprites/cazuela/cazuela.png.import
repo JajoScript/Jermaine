@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxtwp8pjq87h"
-path="res://.godot/imported/cazuela.png-762fdcc8805e52e3cfac78e353134069.ctex"
+path="res://.godot/imported/cazuela.png-2f0ecfe886496ece5711d1f0aa2be8fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/sprites/Cazuela/cazuela.png"
-dest_files=["res://.godot/imported/cazuela.png-762fdcc8805e52e3cfac78e353134069.ctex"]
+source_file="res://src/sprites/cazuela/cazuela.png"
+dest_files=["res://.godot/imported/cazuela.png-2f0ecfe886496ece5711d1f0aa2be8fe.ctex"]
 
 [params]
 

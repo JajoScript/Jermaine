@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2eb0r2kdjohm"
-path="res://.godot/imported/chancho.png-05d76fcf5b8cc5bae6670f70305734ff.ctex"
+uid="uid://c0o71vj173gws"
+path="res://.godot/imported/armadura.png-898a62942255f21d02fdb4c968281692.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/sprites/chancho/chancho.png"
-dest_files=["res://.godot/imported/chancho.png-05d76fcf5b8cc5bae6670f70305734ff.ctex"]
+source_file="res://src/levels/Nivel3/armadura.png"
+dest_files=["res://.godot/imported/armadura.png-898a62942255f21d02fdb4c968281692.ctex"]
 
 [params]
 

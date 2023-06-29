@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3j2j4u86k1gh"
-path="res://.godot/imported/e_kay.png-7c4440f66c331ab1fd48241ffa721a81.ctex"
+path="res://.godot/imported/e_kay.png-a6cb781273f3f7db80a746a4e1586312.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/sprites/E_key/e_kay.png"
-dest_files=["res://.godot/imported/e_kay.png-7c4440f66c331ab1fd48241ffa721a81.ctex"]
+source_file="res://src/sprites/e_key/e_kay.png"
+dest_files=["res://.godot/imported/e_kay.png-a6cb781273f3f7db80a746a4e1586312.ctex"]
 
 [params]
 

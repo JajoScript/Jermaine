@@ -10,6 +10,7 @@ extends Node2D
 #* -- Base.
 func _ready():
 	sprite.play("idle")
+	$AnimationPlayer.play("walk")
 
 
 func _process(_delta):
