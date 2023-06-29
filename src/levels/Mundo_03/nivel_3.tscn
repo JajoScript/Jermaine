@@ -1,21 +1,20 @@
-[gd_scene load_steps=19 format=3 uid="uid://m2we1jhn6ti7"]
+[gd_scene load_steps=25 format=3 uid="uid://m2we1jhn6ti7"]
 
 [ext_resource type="Texture2D" uid="uid://celw2sy8nuf32" path="res://src/tiles/Rocky Roads/Objects/sign_arrow.png" id="1_crfnf"]
 [ext_resource type="Texture2D" uid="uid://cetak28o5sjn0" path="res://src/levels/Nivel3/fondo mina.png" id="1_csve7"]
 [ext_resource type="Texture2D" uid="uid://bu2be7umwaggq" path="res://src/levels/tileset_snow.png" id="1_k5bpv"]
 [ext_resource type="Script" path="res://src/levels/Mundo_03/nivel_3.gd" id="1_r2tx0"]
 [ext_resource type="PackedScene" uid="uid://c3b78d2kdnkd7" path="res://src/sprites/Orca/orca.tscn" id="2_anor8"]
-[ext_resource type="PackedScene" uid="uid://cc0okok6skkn" path="res://src/sprites/door/door.tscn" id="2_q4rh8"]
+[ext_resource type="PackedScene" uid="uid://cc0okok6skkn" path="res://src/sprites/Door/door.tscn" id="2_q4rh8"]
 [ext_resource type="PackedScene" uid="uid://ch57627pm4leb" path="res://src/sprites/Jermaine/jermaine.tscn" id="5_x3r2l"]
-[ext_resource type="PackedScene" uid="uid://25xwc7l8ny1h" path="res://src/game components/Dialogos/dialogos.tscn" id="6_0ormb"]
 [ext_resource type="Texture2D" uid="uid://bk2gwgx0es5p0" path="res://src/assets/objects/image-removebg-preview (11) (1).png" id="7_6122a"]
 [ext_resource type="Texture2D" uid="uid://bgqw5akp55qfv" path="res://src/assets/objects/lapida.png" id="8_2ekvg"]
 [ext_resource type="Texture2D" uid="uid://br1mr1k55kopj" path="res://src/assets/objects/palocraneo.png" id="9_88ank"]
 [ext_resource type="Texture2D" uid="uid://cbij37kqdnepg" path="res://src/assets/objects/cartelmuerte.png" id="10_t7vqg"]
 [ext_resource type="Texture2D" uid="uid://bnqihu14rdj32" path="res://src/assets/objects/jaula.png" id="11_j63xx"]
-[ext_resource type="PackedScene" uid="uid://buyprgdyxhljr" path="res://src/enemies/dragon.tscn" id="12_8qaqd"]
+[ext_resource type="PackedScene" uid="uid://buyprgdyxhljr" path="res://src/Enemies/dragon.tscn" id="12_8qaqd"]
 [ext_resource type="PackedScene" uid="uid://cw6p6dlc7ohy1" path="res://src/sprites/Snowman/snowman.tscn" id="12_aq45o"]
-[ext_resource type="PackedScene" uid="uid://4senjo5c3eb0" path="res://src/enemies/hub.tscn" id="13_2uu7j"]
+[ext_resource type="PackedScene" uid="uid://4senjo5c3eb0" path="res://src/Enemies/hub.tscn" id="13_2uu7j"]
 [ext_resource type="Script" path="res://src/sprites/HombreArmadura/Area2D.gd" id="15_gbpai"]
 [ext_resource type="Texture2D" uid="uid://c0o71vj173gws" path="res://src/levels/Nivel3/armadura.png" id="16_638sp"]
 [ext_resource type="PackedScene" uid="uid://25xwc7l8ny1h" path="res://src/game components/Dialogos/dialogos.tscn" id="17_066vy"]
@@ -134,6 +133,21 @@ texture = ExtResource("1_k5bpv")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hek64")
 
+[sub_resource type="Animation" id="Animation_46aup"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="Animation" id="Animation_vppw5"]
 resource_name = "stand"
 length = 0.9
@@ -149,21 +163,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
-}
-
-[sub_resource type="Animation" id="Animation_46aup"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8ya1s"]
@@ -257,7 +256,7 @@ position = Vector2(3240, 661)
 scale = Vector2(0.729508, 0.729508)
 texture = ExtResource("7_6122a")
 
-[node name="Dialogos" parent="skull" instance=ExtResource("6_0ormb")]
+[node name="Dialogos" parent="skull" instance=ExtResource("17_066vy")]
 position = Vector2(-6.854, 6.85394)
 scale = Vector2(0.5, 0.5)
 dialogList = ["Y el Boris?", "Callampin Bombin"]
@@ -272,7 +271,7 @@ position = Vector2(1896.34, 293.25)
 scale = Vector2(0.729508, 0.729508)
 texture = ExtResource("7_6122a")
 
-[node name="Dialogos" parent="skull3" instance=ExtResource("6_0ormb")]
+[node name="Dialogos" parent="skull3" instance=ExtResource("17_066vy")]
 position = Vector2(-16.9155, -1.71347)
 scale = Vector2(0.5, 0.5)
 dialogList = ["Cuidado amigazo", "Andan perros"]
@@ -282,7 +281,7 @@ position = Vector2(734, 102)
 scale = Vector2(0.729508, 0.729508)
 texture = ExtResource("7_6122a")
 
-[node name="Dialogos" parent="skull4" instance=ExtResource("6_0ormb")]
+[node name="Dialogos" parent="skull4" instance=ExtResource("17_066vy")]
 position = Vector2(12.3372, -4.11237)
 scale = Vector2(0.5, 0.5)
 dialogList = ["Ayudame marito", "Cuando chico era rubio"]
@@ -362,21 +361,12 @@ position = Vector2(1079.17, 421.5)
 scale = Vector2(0.741379, 0.741379)
 texture = ExtResource("11_j63xx")
 
-[node name="Jaula5" type="Sprite2D" parent="."]
-position = Vector2(3062, 1017)
-scale = Vector2(-2.078, 2.078)
-texture = ExtResource("11_j63xx")
-
-[node name="Dialogos" parent="Jaula5" instance=ExtResource("6_0ormb")]
-position = Vector2(-49.0856, 18.768)
-dialogList = ["Que ganas de comer un tocomple"]
-
 [node name="Jaula4" type="Sprite2D" parent="."]
 position = Vector2(952.621, 165)
 scale = Vector2(0.724138, 0.724138)
 texture = ExtResource("11_j63xx")
 
-[node name="Dialogos" parent="Jaula4" instance=ExtResource("6_0ormb")]
+[node name="Dialogos" parent="Jaula4" instance=ExtResource("17_066vy")]
 position = Vector2(18.4758, 15.1905)
 scale = Vector2(0.5, 0.5)
 dialogList = ["Me duele el poto jeje", "Soy inocente"]
@@ -426,6 +416,32 @@ position = Vector2(1572, 604)
 [node name="orca4" parent="." instance=ExtResource("2_anor8")]
 position = Vector2(2811, 780)
 
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(415, 221)
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+script = ExtResource("15_gbpai")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Area2D"]
+libraries = {
+"": SubResource("AnimationLibrary_8ya1s")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+position = Vector2(163, -34.5)
+shape = SubResource("RectangleShape2D_akwue")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Area2D"]
+position = Vector2(164, -36)
+texture = ExtResource("16_638sp")
+hframes = 3
+frame = 1
+
+[node name="Dialogos" parent="Node2D" instance=ExtResource("17_066vy")]
+position = Vector2(127, -77)
+scale = Vector2(0.4, 0.4)
+dialogList = ["Bienvenido a la super cueva", "Muchos debiles han muerto aquí"]
+
 [node name="Snowman" parent="." instance=ExtResource("12_aq45o")]
 position = Vector2(130, 189)
 
@@ -472,29 +488,3 @@ position = Vector2(2290, -86)
 
 [node name="Dragon4" parent="." instance=ExtResource("12_8qaqd")]
 position = Vector2(2877, 668)
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(415, 221)
-
-[node name="Area2D" type="Area2D" parent="Node2D"]
-script = ExtResource("15_gbpai")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Area2D"]
-libraries = {
-"": SubResource("AnimationLibrary_8ya1s")
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
-position = Vector2(163, -34.5)
-shape = SubResource("RectangleShape2D_akwue")
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Area2D"]
-position = Vector2(164, -36)
-texture = ExtResource("16_638sp")
-hframes = 3
-frame = 1
-
-[node name="Dialogos" parent="Node2D" instance=ExtResource("17_066vy")]
-position = Vector2(127, -77)
-scale = Vector2(0.4, 0.4)
-dialogList = ["Bienvenido a la super cueva", "Muchos debiles han muerto aquí"]
