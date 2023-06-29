@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dlqyfq6pidt4s"]
+[gd_scene load_steps=17 format=3 uid="uid://dlqyfq6pidt4s"]
 
 [ext_resource type="Script" path="res://src/levels/Mundo 02/mundo_02.gd" id="1_wye5m"]
 [ext_resource type="PackedScene" uid="uid://ch57627pm4leb" path="res://src/characters/jermaine/jermaine.tscn" id="2_r6m5f"]
@@ -11,7 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://i8r4ijlaxq28" path="res://src/sprites/chancho/chancho.tscn" id="6_lhdfy"]
 [ext_resource type="PackedScene" uid="uid://b75hvqgxqktrh" path="res://src/sprites/gonzalin/gonzalin.tscn" id="7_tuohb"]
 [ext_resource type="PackedScene" uid="uid://cc0okok6skkn" path="res://src/sprites/door/door.tscn" id="8_j75t8"]
-[ext_resource type="PackedScene" uid="uid://4senjo5c3eb0" path="res://src/Enemies/hub.tscn" id="9_jxvuu"]
+[ext_resource type="PackedScene" uid="uid://4senjo5c3eb0" path="res://src/enemies/hub.tscn" id="9_jxvuu"]
+[ext_resource type="PackedScene" uid="uid://buyprgdyxhljr" path="res://src/enemies/dragon.tscn" id="13_326rj"]
+[ext_resource type="PackedScene" uid="uid://bh4201y3hqd6y" path="res://src/enemies/dragonTierra.tscn" id="14_3ng66"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y1vx5"]
 texture = ExtResource("3_fj2ad")
@@ -1107,3 +1109,27 @@ zoom = Vector2(3, 3)
 [node name="HUB" parent="Jermaine/Camera2D" instance=ExtResource("9_jxvuu")]
 scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="Dragon" parent="." instance=ExtResource("13_326rj")]
+position = Vector2(1120, 13)
+
+[node name="Dragon2" parent="." instance=ExtResource("13_326rj")]
+position = Vector2(1103, -141)
+
+[node name="Dragon3" parent="." instance=ExtResource("13_326rj")]
+position = Vector2(951, -65)
+
+[node name="Dragon4" parent="." instance=ExtResource("13_326rj")]
+position = Vector2(468, -6)
+
+[node name="Dragon5" parent="." instance=ExtResource("13_326rj")]
+position = Vector2(348, -129)
+
+[node name="DT" parent="." instance=ExtResource("14_3ng66")]
+position = Vector2(928, 220)
+
+[node name="DT2" parent="." instance=ExtResource("14_3ng66")]
+position = Vector2(737, 42)
+
+[node name="DT3" parent="." instance=ExtResource("14_3ng66")]
+position = Vector2(737, 42)
