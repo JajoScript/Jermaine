@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://cw6p6dlc7ohy1"]
 
-[ext_resource type="Texture2D" uid="uid://brsfm7cgnqwkn" path="res://src/characters/snowmanNPC/SnowmanSheet.png" id="1_0aj1c"]
+[ext_resource type="Texture2D" uid="uid://brsfm7cgnqwkn" path="res://src/sprites/SnowmanNPC/SnowmanSheet.png" id="1_0aj1c"]
 [ext_resource type="Script" path="res://src/sprites/Snowman/snowman.gd" id="1_bk8xc"]
-[ext_resource type="Texture2D" uid="uid://dfivhloyvia82" path="res://src/characters/snowmanNPC/SnowmanTalk-Sheet.png" id="2_5lv2k"]
+[ext_resource type="Texture2D" uid="uid://dfivhloyvia82" path="res://src/sprites/SnowmanNPC/SnowmanTalk-Sheet.png" id="2_5lv2k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6bagi"]
 atlas = ExtResource("1_0aj1c")
