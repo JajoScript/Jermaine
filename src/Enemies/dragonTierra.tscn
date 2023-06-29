@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dmrw78hbn8ybi"]
 
 [ext_resource type="Script" path="res://src/sprites/Dragon/dragonTierra.gd" id="1_po3b4"]
-[ext_resource type="Texture2D" uid="uid://hn4q5c258cq8" path="res://src/characters/dinosaruioTierra/walk.png" id="2_nlbt4"]
+[ext_resource type="Texture2D" uid="uid://hn4q5c258cq8" path="res://src/sprites/DinosaruioTierra/walk.png" id="2_nlbt4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxldq"]
 size = Vector2(24, 27)
