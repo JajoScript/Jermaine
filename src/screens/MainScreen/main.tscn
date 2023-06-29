@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cayf811nkt68t"]
+[gd_scene load_steps=5 format=3 uid="uid://cayf811nkt68t"]
 
 [ext_resource type="Texture2D" uid="uid://dn32idlswtkbf" path="res://src/assets/splash/background.png" id="1_b8nnw"]
 [ext_resource type="Script" path="res://src/screens/MainScreen/main.gd" id="1_s5gcv"]
+[ext_resource type="PackedScene" uid="uid://duf36s0713aac" path="res://src/gui/JermaineTitle/title.tscn" id="3_1htte"]
 [ext_resource type="FontFile" uid="uid://o5gd3od23k32" path="res://src/assets/fonts/PressStart2P-Regular.ttf" id="3_dgbnk"]
 
 [node name="MainScreen" type="Node2D"]
@@ -34,11 +35,15 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 200
 
-[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer2"]
+[node name="Title" parent="MarginContainer/VBoxContainer2" instance=ExtResource("3_1htte")]
+position = Vector2(104, -38)
+scale = Vector2(0.7, 0.7)
+
+[node name="Subtitle" type="Label" parent="MarginContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_dgbnk")
 theme_override_font_sizes/font_size = 30
-text = "Jermaine The Chef"
+text = "The Chef"
 horizontal_alignment = 1
 vertical_alignment = 1
 

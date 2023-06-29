@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://duf36s0713aac"]
+
+[ext_resource type="Texture2D" uid="uid://bayrsc0eubi1e" path="res://src/gui/JermaineTitle/title.png" id="1_jne20"]
+
+[node name="Title" type="Node2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_jne20")
