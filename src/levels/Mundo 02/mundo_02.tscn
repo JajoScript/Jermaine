@@ -8,12 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://c4q2qrkbdh1kc" path="res://src/sprites/Arboles/arbol_rojo_01/arbol_01.tscn" id="5_1xwb4"]
 [ext_resource type="PackedScene" uid="uid://bco8v1fn64f61" path="res://src/sprites/Carrito_completos/carrito.tscn" id="5_4i2uk"]
 [ext_resource type="PackedScene" uid="uid://cu00ljd4jb6y1" path="res://src/sprites/Arboles/arbol_rojo_02/arbol_rojo_02.tscn" id="6_4skjt"]
-[ext_resource type="PackedScene" uid="uid://i8r4ijlaxq28" path="res://src/sprites/chancho/chancho.tscn" id="6_lhdfy"]
-[ext_resource type="PackedScene" uid="uid://b75hvqgxqktrh" path="res://src/sprites/gonzalin/gonzalin.tscn" id="7_tuohb"]
-[ext_resource type="PackedScene" uid="uid://cc0okok6skkn" path="res://src/sprites/door/door.tscn" id="8_j75t8"]
-[ext_resource type="PackedScene" uid="uid://4senjo5c3eb0" path="res://src/enemies/hub.tscn" id="9_jxvuu"]
-[ext_resource type="PackedScene" uid="uid://buyprgdyxhljr" path="res://src/enemies/dragon.tscn" id="13_326rj"]
-[ext_resource type="PackedScene" uid="uid://bh4201y3hqd6y" path="res://src/enemies/dragonTierra.tscn" id="14_3ng66"]
+[ext_resource type="PackedScene" uid="uid://i8r4ijlaxq28" path="res://src/sprites/Chancho/chancho.tscn" id="6_lhdfy"]
+[ext_resource type="PackedScene" uid="uid://b75hvqgxqktrh" path="res://src/sprites/Gonzalin/gonzalin.tscn" id="7_tuohb"]
+[ext_resource type="PackedScene" uid="uid://cc0okok6skkn" path="res://src/sprites/Door/door.tscn" id="8_j75t8"]
+[ext_resource type="PackedScene" uid="uid://4senjo5c3eb0" path="res://src/Enemies/hub.tscn" id="9_jxvuu"]
+[ext_resource type="PackedScene" uid="uid://buyprgdyxhljr" path="res://src/Enemies/dragon.tscn" id="13_326rj"]
+[ext_resource type="PackedScene" uid="uid://bh4201y3hqd6y" path="res://src/Enemies/dragonTierra.tscn" id="14_3ng66"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y1vx5"]
 texture = ExtResource("3_fj2ad")
@@ -1111,8 +1111,6 @@ position = Vector2(14.4444, -46.6667)
 zoom = Vector2(3, 3)
 
 [node name="HUB" parent="Jermaine/Camera2D" instance=ExtResource("9_jxvuu")]
-scale = Vector2(2, 2)
-transform = Transform2D(2, 0, 0, 2, 0, 0)
 
 [node name="Dragon" parent="." instance=ExtResource("13_326rj")]
 position = Vector2(1120, 13)

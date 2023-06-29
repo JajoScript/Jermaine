@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://cw6p6dlc7ohy1"]
 
-[ext_resource type="Texture2D" uid="uid://brsfm7cgnqwkn" path="res://src/characters/snowmanNPC/SnowmanSheet.png" id="1_0aj1c"]
+[ext_resource type="Texture2D" uid="uid://brsfm7cgnqwkn" path="res://src/sprites/SnowmanNPC/SnowmanSheet.png" id="1_0aj1c"]
 [ext_resource type="Script" path="res://src/sprites/Snowman/snowman.gd" id="1_bk8xc"]
-[ext_resource type="Texture2D" uid="uid://dfivhloyvia82" path="res://src/characters/snowmanNPC/SnowmanTalk-Sheet.png" id="2_5lv2k"]
+[ext_resource type="Texture2D" uid="uid://dfivhloyvia82" path="res://src/sprites/SnowmanNPC/SnowmanTalk-Sheet.png" id="2_5lv2k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6bagi"]
 atlas = ExtResource("1_0aj1c")
@@ -60,12 +60,16 @@ animations = [{
 }]
 
 [node name="Snowman" type="Node2D"]
-position = Vector2(72, 19)
+position = Vector2(126, 175)
 script = ExtResource("1_bk8xc")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, -7)
 scale = Vector2(0.136076, 0.136076)
 sprite_frames = SubResource("SpriteFrames_31byn")
-animation = &"talk"
-frame_progress = 0.701841
+animation = &"idle"
+frame = 1
+frame_progress = 0.884876
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)

@@ -61,7 +61,6 @@ shape = SubResource("RectangleShape2D_sm04g")
 disabled = true
 
 [node name="Dialog" type="Node2D" parent="."]
-visible = false
 position = Vector2(0, -30)
 scale = Vector2(0.3, 0.3)
 

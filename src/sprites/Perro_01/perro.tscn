@@ -1,0 +1,102 @@
+[gd_scene load_steps=16 format=3 uid="uid://tkrvhe3fysjn"]
+
+[ext_resource type="Script" path="res://src/sprites/Perro_01/Perro.gd" id="1_5kud1"]
+[ext_resource type="Texture2D" uid="uid://cwbr3yr6ppwd2" path="res://src/sprites/Perro_01/Idle.png" id="2_17htw"]
+[ext_resource type="Texture2D" uid="uid://07vi2y1ddi56" path="res://src/sprites/Perro_01/Walk.png" id="3_4ndx8"]
+[ext_resource type="PackedScene" uid="uid://25xwc7l8ny1h" path="res://src/game components/Dialogos/dialogos.tscn" id="6_yee4d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl1k5"]
+atlas = ExtResource("2_17htw")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn8bt"]
+atlas = ExtResource("2_17htw")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uiksy"]
+atlas = ExtResource("2_17htw")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0l0x4"]
+atlas = ExtResource("2_17htw")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_to3lv"]
+atlas = ExtResource("3_4ndx8")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvs10"]
+atlas = ExtResource("3_4ndx8")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8n3a7"]
+atlas = ExtResource("3_4ndx8")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gisxn"]
+atlas = ExtResource("3_4ndx8")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eegxj"]
+atlas = ExtResource("3_4ndx8")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twy52"]
+atlas = ExtResource("3_4ndx8")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xlcj2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl1k5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn8bt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uiksy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0l0x4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_to3lv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvs10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8n3a7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gisxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eegxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twy52")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Perro" type="Node2D"]
+script = ExtResource("1_5kud1")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xlcj2")
+animation = &"idle"
+frame_progress = 0.806787
+
+[node name="Dialogos" parent="." instance=ExtResource("6_yee4d")]
+position = Vector2(-4, -22)
+scale = Vector2(0.4, 0.4)
+dialogList = ["Woof woof", "Quiero comer chocolate"]

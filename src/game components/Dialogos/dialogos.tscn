@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://25xwc7l8ny1h"]
+
+[ext_resource type="Script" path="res://src/game components/Dialogos/Dialogos.gd" id="1_5f55k"]
+[ext_resource type="FontFile" uid="uid://o5gd3od23k32" path="res://src/assets/fonts/PressStart2P-Regular.ttf" id="2_pr6rw"]
+[ext_resource type="StyleBox" uid="uid://dq3m4o0vliqj" path="res://src/themes/dialog.tres" id="3_gypgp"]
+
+[node name="Dialogos" type="Node2D"]
+script = ExtResource("1_5f55k")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_pr6rw")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("3_gypgp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
