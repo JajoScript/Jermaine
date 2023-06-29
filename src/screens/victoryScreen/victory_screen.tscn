@@ -1,0 +1,115 @@
+[gd_scene load_steps=12 format=3 uid="uid://cq3rcj6uhqo2u"]
+
+[ext_resource type="FontFile" uid="uid://o5gd3od23k32" path="res://src/assets/fonts/PressStart2P-Regular.ttf" id="1_hfgd0"]
+[ext_resource type="Script" path="res://src/screens/victoryScreen/victory_screen.gd" id="1_ow5i4"]
+[ext_resource type="Texture2D" uid="uid://dk1rlm26jsx1f" path="res://src/sprites/Hotdog/sprite.png" id="2_o1qae"]
+[ext_resource type="Texture2D" uid="uid://budm0rhxninve" path="res://src/sprites/Jermaine/sprites/idle.png" id="3_yjie5"]
+[ext_resource type="Theme" uid="uid://6wkd40ltyt1g" path="res://src/themes/gui.tres" id="4_ldcwu"]
+
+[sub_resource type="Theme" id="Theme_i41oa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w3fyk"]
+bg_color = Color(0.756863, 0.552941, 0.352941, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hydkd"]
+line_spacing = 1.0
+font = ExtResource("1_hfgd0")
+font_size = 50
+font_color = Color(0.0117647, 0.00392157, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j1idi"]
+line_spacing = 1.0
+font = ExtResource("1_hfgd0")
+font_size = 20
+font_color = Color(0.0117647, 0.00392157, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vion7"]
+bg_color = Color(0.847059, 0.847059, 0.847059, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gudgo"]
+line_spacing = 1.0
+font = ExtResource("1_hfgd0")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="VictoryScreen" type="Node2D"]
+script = ExtResource("1_ow5i4")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_i41oa")
+theme_override_styles/panel = SubResource("StyleBoxFlat_w3fyk")
+
+[node name="Title" type="Label" parent="Panel"]
+offset_left = 381.0
+offset_top = 105.0
+offset_right = 941.0
+offset_bottom = 156.0
+text = "GANASTE"
+label_settings = SubResource("LabelSettings_hydkd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubTitle" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 145.0
+offset_right = 935.0
+offset_bottom = 186.0
+text = "Lo conseguiste"
+label_settings = SubResource("LabelSettings_j1idi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Completo" type="Sprite2D" parent="Panel"]
+position = Vector2(662, 321)
+texture = ExtResource("2_o1qae")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel"]
+position = Vector2(387.5, 366.5)
+scale = Vector2(14.6875, 14.6875)
+texture = ExtResource("3_yjie5")
+hframes = 4
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 214.0
+offset_right = 820.0
+offset_bottom = 333.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vion7")
+
+[node name="Victorylabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 255.0
+offset_right = 780.0
+offset_bottom = 297.0
+text = "Un completo
+a luca"
+label_settings = SubResource("LabelSettings_gudgo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonMainMenu" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 493.0
+offset_top = 455.0
+offset_right = 822.0
+offset_bottom = 486.0
+theme = ExtResource("4_ldcwu")
+text = "Menu principal"
+
+[node name="ButtonExit" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 492.0
+offset_right = 822.0
+offset_bottom = 523.0
+theme = ExtResource("4_ldcwu")
+text = "Salir"
+
+[connection signal="button_up" from="Panel/ButtonMainMenu" to="." method="_on_button_main_menu_button_up"]
+[connection signal="button_up" from="Panel/ButtonExit" to="." method="_on_button_exit_button_up"]

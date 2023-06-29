@@ -1,11 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://m2we1jhn6ti7"]
+[gd_scene load_steps=19 format=3 uid="uid://m2we1jhn6ti7"]
 
 [ext_resource type="Texture2D" uid="uid://celw2sy8nuf32" path="res://src/tiles/Rocky Roads/Objects/sign_arrow.png" id="1_crfnf"]
 [ext_resource type="Texture2D" uid="uid://cetak28o5sjn0" path="res://src/levels/Nivel3/fondo mina.png" id="1_csve7"]
 [ext_resource type="Texture2D" uid="uid://bu2be7umwaggq" path="res://src/levels/tileset_snow.png" id="1_k5bpv"]
+[ext_resource type="Script" path="res://src/levels/Mundo_03/nivel_3.gd" id="1_r2tx0"]
 [ext_resource type="PackedScene" uid="uid://c3b78d2kdnkd7" path="res://src/sprites/Orca/orca.tscn" id="2_anor8"]
 [ext_resource type="PackedScene" uid="uid://cc0okok6skkn" path="res://src/sprites/Door/door.tscn" id="2_q4rh8"]
 [ext_resource type="PackedScene" uid="uid://ch57627pm4leb" path="res://src/sprites/Jermaine/jermaine.tscn" id="5_x3r2l"]
+[ext_resource type="PackedScene" uid="uid://25xwc7l8ny1h" path="res://src/game components/Dialogos/dialogos.tscn" id="6_0ormb"]
 [ext_resource type="Texture2D" uid="uid://bk2gwgx0es5p0" path="res://src/assets/objects/image-removebg-preview (11) (1).png" id="7_6122a"]
 [ext_resource type="Texture2D" uid="uid://bgqw5akp55qfv" path="res://src/assets/objects/lapida.png" id="8_2ekvg"]
 [ext_resource type="Texture2D" uid="uid://br1mr1k55kopj" path="res://src/assets/objects/palocraneo.png" id="9_88ank"]
@@ -130,6 +132,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hek64")
 
 [node name="Nivel2" type="Node2D"]
+script = ExtResource("1_r2tx0")
 
 [node name="FondoMina" type="Sprite2D" parent="."]
 position = Vector2(974, 277)
@@ -162,15 +165,15 @@ scale = Vector2(0.2754, 0.2754)
 texture = ExtResource("1_csve7")
 
 [node name="Door" parent="." instance=ExtResource("2_q4rh8")]
-position = Vector2(22, 169)
-scale = Vector2(0.308, 0.308)
+position = Vector2(23, 145)
+scale = Vector2(0.5, 0.5)
 is_open = false
 id_level = "Mundo_03"
 location = "Comienzo"
 
 [node name="Door2" parent="." instance=ExtResource("2_q4rh8")]
-position = Vector2(1995, 1354)
-scale = Vector2(0.308, 0.308)
+position = Vector2(1991, 1329)
+scale = Vector2(0.5, 0.5)
 id_level = "Mundo_03"
 location = "Final"
 
@@ -210,6 +213,11 @@ position = Vector2(3240, 661)
 scale = Vector2(0.729508, 0.729508)
 texture = ExtResource("7_6122a")
 
+[node name="Dialogos" parent="skull" instance=ExtResource("6_0ormb")]
+position = Vector2(-6.854, 6.85394)
+scale = Vector2(0.5, 0.5)
+dialogList = ["Y el Boris?", "Callampin Bombin"]
+
 [node name="skull2" type="Sprite2D" parent="."]
 position = Vector2(1570, 214)
 scale = Vector2(0.729508, 0.729508)
@@ -220,10 +228,20 @@ position = Vector2(1896.34, 293.25)
 scale = Vector2(0.729508, 0.729508)
 texture = ExtResource("7_6122a")
 
+[node name="Dialogos" parent="skull3" instance=ExtResource("6_0ormb")]
+position = Vector2(-16.9155, -1.71347)
+scale = Vector2(0.5, 0.5)
+dialogList = ["Cuidado amigazo", "Andan perros"]
+
 [node name="skull4" type="Sprite2D" parent="."]
 position = Vector2(734, 102)
 scale = Vector2(0.729508, 0.729508)
 texture = ExtResource("7_6122a")
+
+[node name="Dialogos" parent="skull4" instance=ExtResource("6_0ormb")]
+position = Vector2(12.3372, -4.11237)
+scale = Vector2(0.5, 0.5)
+dialogList = ["Ayudame marito", "Cuando chico era rubio"]
 
 [node name="skull5" type="Sprite2D" parent="."]
 position = Vector2(657, 423)
@@ -305,10 +323,19 @@ position = Vector2(3062, 1017)
 scale = Vector2(-2.078, 2.078)
 texture = ExtResource("11_j63xx")
 
+[node name="Dialogos" parent="Jaula5" instance=ExtResource("6_0ormb")]
+position = Vector2(-49.0856, 18.768)
+dialogList = ["Que ganas de comer un tocomple"]
+
 [node name="Jaula4" type="Sprite2D" parent="."]
 position = Vector2(952.621, 165)
 scale = Vector2(0.724138, 0.724138)
 texture = ExtResource("11_j63xx")
+
+[node name="Dialogos" parent="Jaula4" instance=ExtResource("6_0ormb")]
+position = Vector2(18.4758, 15.1905)
+scale = Vector2(0.5, 0.5)
+dialogList = ["Me duele el poto jeje", "Soy inocente"]
 
 [node name="Jaula2" type="Sprite2D" parent="."]
 position = Vector2(943.621, 516)
@@ -357,8 +384,6 @@ position = Vector2(2811, 780)
 
 [node name="Snowman" parent="." instance=ExtResource("12_aq45o")]
 position = Vector2(130, 189)
-rotation = 3.14159
-scale = Vector2(1, -1)
 
 [node name="Jermaine" parent="." instance=ExtResource("5_x3r2l")]
 position = Vector2(76, 164)

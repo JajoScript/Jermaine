@@ -34,6 +34,12 @@ func change_level():
 		elif (location == "Final"):
 			print("Debo cambiar la Mundo_03")
 			get_tree().change_scene_to_file("res://src/levels/Mundo_03/nivel_3.tscn")
+	
+	elif (id_level == "Mundo_03"):
+		if (location == "Comienzo"):
+			print("niuna wea")
+		elif (location == "Final"):
+			get_tree().change_scene_to_file("res://src/screens/victoryScreen/victory_screen.tscn")
 
 
 func _on_area_2d_body_entered(_body):
